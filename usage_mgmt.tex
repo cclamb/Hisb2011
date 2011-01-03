@@ -352,24 +352,24 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Bare Demo of IEEEtran.cls for IEEECS Conferences}
+\title{Usage Management of Electronic Medical Records}
 
 
 % author names and affiliations
 % use a multiple column layout for up to two different
 % affiliations
 
-\author{\IEEEauthorblockN{Authors Name/s per 1st Affiliation (Author)}
-\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
-line 2: name of organization, acronyms acceptable\\
-line 3: City, Country\\
-line 4: Email: name@xyz.com}
+\author{\IEEEauthorblockN{Christopher C. Lamb}
+\IEEEauthorblockA{University of New Mexico\\
+Dept. of Electrical and Computer Engineering\\
+Albuquerque, NM 87131-0001 \\
+cclamb@ece.unm.edu}
 \and
-\IEEEauthorblockN{Authors Name/s per 2nd Affiliation (Author)}
-\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
-line 2: name of organization, acronyms acceptable\\
-line 3: City, Country\\
-line 4: Email: name@xyz.com}
+\IEEEauthorblockN{Dr. Greg Heileman}
+\IEEEauthorblockA{University of New Mexico\\
+Dept. of Electrical and Computer Engineering\\
+Albuquerque, NM 87131-0001 \\
+hieleman@ece.unm.edu}
 }
 
 % conference papers do not typically use \thanks and this command
@@ -408,12 +408,17 @@ line 4: Email: name@xyz.com}
 
 
 \begin{abstract}
-The abstract goes here. DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
+New healthcare legislation has spurred previously unknown levels of public and private investment into technologies supporting more efficient healthcare delivery [1].   An active area in the process of examination is electronic health records.  Current systems, like Microsoft HealthVault and Google Health are a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer [2].
+
+We propose a new, open, consumer-centric approach to health information storage and consumption centered around flexible and granular usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed [3].  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to specific healthcare providers who need specific information to support diagnoses.  Furthermore, institutions would be able to combine information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of the policy conflict.
+
+We will propose, design, and demonstrate a system that supports granular management of the data elements of an electronic medical record.  This management will allow users to specify policies over the data itself rather than the entire record in question, providing unprecidented control over information dissemination.  We will demonstrate this control in three distinct scenarios.  The first will include two distinct parties negotiating over access to specific information contained in a medical record.  If the parties can reach an agreement, the information consumer will be granted access to specific medical data, for an agreed-upon price.  The second demostrates a data broker combining a set of previously acquired medical record data into an aggregate set for research, if the licensure is in fact compliant between all selelected data elements.  Finally, the aggregated data set will be placed back into the market.
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-component; formatting; style; styling;
+%component; formatting; style; styling;
+usage management; electronic medical records
 
 \end{IEEEkeywords}
 
@@ -432,24 +437,38 @@ component; formatting; style; styling;
 
 \section{Introduction}
 % no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.7 and later.
+Intro
 
-All manuscripts must be in English. These guidelines include complete descriptions of the fonts, spacing, and related information for producing your proceedings manuscripts. Please follow them and if you have any questions, direct them to the production editor in charge of your proceedings at Conference Publishing Services (CPS): Phone +1 (714) 821-8380 or Fax +1 (714) 761-1784.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-
-\subsection{Subsection Heading Here}
+\subsection{Previous Work}
 Subsection text here.
 
+%\subsubsection{Subsubsection Heading Here}
+%Subsubsection text here.
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+\section{Underpinnings}
+%Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
+Describe details of technology including ontologies; need to discuss static v. dynamic term evaluation and why we require dynamic in this system 
 
-\section{Type style and Fonts}
-Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
+\subsection{Marketplace}
+describe how the market works, how it incentivises desired behaviour
 
+\subsection{Usage Management}
+describe how the usage management system works
+
+\section{System}
+%Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
+
+\subsection{Cases and Scenarios}
+Outline the use cases, describe them, map them to specific scenarios
+
+\subsection{Scenario 1: Negotiation}
+Demonstrate and present results; negotiation over specific information contained in a EMR
+
+\subsection{Scenario 2: Aggregate Assembly}
+Demonstrate and present results; assemble data elements into a single data set; show both usage term compliance and non-compliance
+
+\subsection{Scenario 3: Aggregate Submission}
+Demonstrate and present results; insert new set into marketplace; demonstrate acquisition of set and traceability back to individual elements
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -536,17 +555,14 @@ Wherever Times is specified, Times Roman or Times New Roman may be used. If neit
 
 
 \section{Conclusion}
-The conclusion goes here. this is more of the conclusion yippee calle
+Evaluate results and outline future work
 
 % conference papers do not normally have an appendix
 
 
 % use section* for acknowledgement
 \section*{Acknowledgment}
-
-
-The authors would like to thank...
-more thanks here
+The authors would like to thank ECE, Ravi, Greg, Pramod?
 
 
 % trigger a \newpage just before the given reference
