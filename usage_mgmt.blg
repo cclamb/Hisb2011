@@ -2,44 +2,45 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: usage_mgmt.aux
 The style file: plain.bst
 Database file #1: emr.bib
-You've used 1 entry,
+Database file #2: drm.bib
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            504 strings with 4101 characters,
-and the built_in function-call counts, 319 in all, are:
-= -- 32
-> -- 7
-< -- 0
-+ -- 4
-- -- 2
-* -- 24
-:= -- 58
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 4
+            534 strings with 4893 characters,
+and the built_in function-call counts, 1768 in all, are:
+= -- 185
+> -- 63
+< -- 2
++ -- 27
+- -- 20
+* -- 110
+:= -- 281
+add.period$ -- 17
+call.type$ -- 5
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 11
-empty$ -- 28
-format.name$ -- 2
-if$ -- 62
+cite$ -- 5
+duplicate$ -- 76
+empty$ -- 151
+format.name$ -- 20
+if$ -- 390
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 2
+int.to.str$ -- 5
+missing$ -- 4
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 31
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 20
 quote$ -- 0
-skip$ -- 7
+skip$ -- 55
 stack$ -- 0
-substring$ -- 31
-swap$ -- 1
-text.length$ -- 0
+substring$ -- 108
+swap$ -- 21
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 20
 warning$ -- 0
-while$ -- 4
-width$ -- 2
-write$ -- 13
+while$ -- 18
+width$ -- 6
+write$ -- 62
