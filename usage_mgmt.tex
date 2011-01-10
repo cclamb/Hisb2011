@@ -2,22 +2,22 @@
 \documentclass[10pt, conference, compsocconf]{IEEEtran}
 
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
+  \graphicspath{{./images/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
 \else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
-  % \usepackage[dvips]{graphicx}
+  \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
+  \graphicspath{{./images/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
+  \DeclareGraphicsExtensions{.eps}
 \fi
 
 % correct bad hyphenation here
@@ -110,6 +110,13 @@ Describe details of technology including ontologies; need to discuss static v. d
 
 \subsection{Marketplace}
 describe how the market works, how it incentivises desired behaviour
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{ontology}
+\caption{Simulation Results}
+\label{fig_sim}
+\end{figure}
 
 \subsection{Usage Management}
 describe how the usage management system works
