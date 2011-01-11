@@ -90,9 +90,9 @@ usage management; electronic medical records
 
 \section{Introduction}
 % no \IEEEPARstart
-New healthcare legislation has spurred previously unknown levels of public and private investment into technologies supporting more efficient healthcare delivery \cite{website:recovery}.   An active area of examination is electronic health records.  Current systems, like Microsoft HealthVault and Google Health are a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Evaluation:HealthInf:10}.
+New healthcare legislation has spurred previously unknown levels of public and private investment into technologies supporting more efficient healthcare delivery \cite{Emr:Web:Recovery}.   An active area of examination is electronic health records.  Current systems, like Microsoft HealthVault and Google Health are a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Emr:EvaluationHealthInf}.
 
-We propose an open, consumer-centric approach to health information storage and consumption centered around flexible and granular usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed \cite{Emr:PyAmWaCr:04}.  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to specific healthcare providers who need specific information to support diagnoses.  Furthermore, institutions would be able to combine information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of the policy conflict.
+We propose an open, consumer-centric approach to health information storage and consumption centered around flexible and granular usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed \cite{Emr:PyAmWaCr}.  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to specific healthcare providers who need specific information to support diagnoses.  Furthermore, institutions would be able to combine information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of the policy conflict.
 
 We will propose, design, and demonstrate a system that supports granular management of the data elements of an electronic medical record.  This management will allow users to specify policies over the data itself rather than the entire record in question, providing control over information dissemination.  We will demonstrate this control in three distinct scenarios.  The first will include two distinct parties negotiating over access to specific information contained in a medical record.  If the parties can reach an agreement, the information consumer will be granted access to specific medical data, for an agreed-upon price.  The second demostrates a data broker combining a set of previously acquired medical record data into an aggregate set for research, if the licensure is in fact compliant between all selelected data elements.  Finally, the aggregated data set will be placed back into the market.
 
@@ -101,25 +101,59 @@ This kind of system, allowing users control over their data in ways fostering ea
 \subsection{Previous Work}
 Past research applicable to this area includes usage management, digital rights management (DRM), and access control.  Most of the research applicable to the combination of previous arfifacts into a single aggregate artifact comes from the DRM world in particular.  Generally, these expressive languages have been fundamentally based on different types of mathematical logic or formalisms with reasoning capabilities \cite{ArHu:07,BaMi:06,ChCoEtHaJoLa:03,HaWe:04,HaWe:08,PuWe:02,XiBjFu:08}.  This approach, while useful in closed systems, tends to not work as usefully in more open dynamic environments.  This has led to the development of translation mechanisms to address interoperability needs \cite{HeJa:05,PoPrDe:04,ScTaWo:04}.  This translation process is difficult for most policy languages, and in fact infeasible as a result \cite{KoLaMaMi:04,SaShUe:04}.  Alternative approaches have required the use of sophiticated and powerful languages that must be adopted as a universal standard \cite{OMADRM,ODRL-req,Wa:04,XrML-spec}.  This approach inherently limits innovation and flexibility \cite{HeJa:05,JaHe:04,JaHe:08,JaHeMa:06}.
 
-%\subsubsection{Subsubsection Heading Here}
-%Subsubsection text here.
-
 \section{Underpinnings}
 %Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
-Describe details of technology including ontologies; need to discuss static v. dynamic term evaluation and why we require dynamic in this system 
+The system we describe in the following sections incorporates a market to allow users and brokers to profit from the use of electronic medical data released under mutually acceptable terms, where usage policies accompany filtered data for either dynamic or static evaluation.  Usage policies themselves are essentially unlimited in how they describe the use of a specific medical record.
 
-\subsection{Marketplace}
-describe how the market works, how it incentivises desired behaviour
+\subsection{Marketplace} 
+% Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
+Here, we incentivize electronic medical record adoption via the use of a data marketplace.  We have three primary categories of users in mind:
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2in]{roles}
+\caption{System Roles}
+\label{System Roles}
+\end{figure}
+
+\begin{itemize}
+\item \textit{Data Producers} who produce and market electronic medical information.  This category is generally limited expressly to individual users who require medical care and other related products.
+\item \textit{Data Consumers} who directly consume medical information.  This category includes physicians, research institutions, and the like.
+\item \textit{Data Brokers} who acquire and remarket medical data from data producers, making that data available in some kind of value-added for to data consumers.  They are a proper subset of data consumers.
+\end{itemize}
+
+\textit{Data Producers} would use the medical data market to profit from their personal information.  When negotiating over specifics concerning how their data can be used, they are free to manipulate any aspect of the usage terms prior to a final agreement with a \textit{data consumer}.  The \textit{data consumer} can accept or reject a specific proposal, as can a \textit{data producer}.  A typical negotiation would look something like this:
+\begin{enumerate}
+\item A \textit{data consumer} searches the marketplace for medical information meeting specific requirements.  This step is a call to a specific search interface in our example, but could be a manual process.
+\item The search yields some results.  This proposed system returns a list of contact information of known \textit{data producers} that have data matching the search requirements.
+\item The \textit{data consumer} initiates a negotiation for access to specific data.
+\begin{enumerate}
+\item The \textit{data consumer} contacts the \textit{data producer} and submits and initial proposal.
+\item The \textit{data producer} responds to the initial proposal, either be indicating acceptance, rejecting the proposal, or submitting a counter proposal.
+\item The \textit{data consumer} is then free to respond with acceptance, rejection, or a counterproposal of her own.
+\end{enumerate}
+\item Eventually, the negotiation will conclude with the parties having reached an agreement describing access to specific medical data with associated term or having failed to come to mutually acceptable terms with respect to data access.  
+\end{enumerate}
+
+Usage terms in a successful conclusion generally describe what the \textit{data consumer} can access, how and for how long, where it may be accessed, and so on.  It will also usually describe some kind of payment for use, which can be based on any arbitrary number of factors such as time, date, location, attribution, or perhaps in combination with other data.
+
+The market implemented in this system is built around JADE, an open source agent develoment framework based on FIPA agent specifications \cite{Emr:Web:Jade,Emr:Web:Fipa}.
+
+\subsection{Usage Management}
+describe how the usage management system works
+
+\subsection{System Ontology}
+Describe ontology, describe relationships, define elements; this is a system meta-model
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{ontology}
-\caption{Simulation Results}
-\label{fig_sim}
+\caption{System Ontology}
+\label{System Ontology}
 \end{figure}
 
-\subsection{Usage Management}
-describe how the usage management system works
+\subsection{Dynamic and Static Policy Evaluation}
+define dynamic and static policy evaluation, elucidate specific advantages/disadvantages of each, go over which we need to use here and why
 
 \section{System}
 %Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
