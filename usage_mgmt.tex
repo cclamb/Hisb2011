@@ -143,7 +143,17 @@ The market implemented in this system is built around JADE, an open source agent
 describe how the usage management system works
 
 \subsection{System Ontology}
-Describe ontology, describe relationships, define elements; this is a system meta-model
+%Describe ontology, describe relationships, define elements; this is a system meta-model; who uses it, what it is (describe/define), why is it important, where, when, how is it used
+This system is built around a common ontology that needs must be understood by any system developers.  It is currently used to define relationships and entities within the system at design and run time.  The primary elements in this ontology are:
+\begin{itemize}
+\item \textit{Producer} This is a data producer as defined in our user model.  A data producer owns a given \textit{record} that has been created over a lifetime of medical care.
+\item \textit{Consumer} Again from the user model, a data consumer.  Data consumers use medical data in some way.
+\item \textit{Record} A medical record.  We can envision this as a set of discrete medical facts.
+\item \textit{Filter} A transformation of a medical record.  If we have a record $ r $, we can transform $ r $ into $ r' $ by applying a transformation $ t $ such that $ r' = t(r) $ where $ t : record \rightarrow record $ and $ r' \subseteq r $.
+\item \textit{Filtered Record} A filtered record is a record to which a filter has been applied.  If we have a filtered record $ r' $ derived from a record $ r $, then $ r' \subseteq r $.
+\item \textit{License} A license describes the usage policy associated with a given filtered record.  This controls all aspects of filtered record use by an associated consumer.  The specific terms are negotiated over by the producer and the consumer until some consensus is reached, and they then bind the use of an associated filtered record.  Licenses must provide the ability to trace use of transitively associated artifacts regardless of the degree of separation as well.  For example, if we have an artifact $ a $ composed of sets of data elements $ e_{0}, e_{1}, ... , e_{n} $ derived from records $ r_{0}, r_{1}, ... , r_{n} $, we need to be able to ensure that any use of a set of data elements $ e_{i}, i < n $ is within the policy bounds of record $ r_{i}, i < n $ and any compensation associated with such use is correctly attributed to the original data owners and brokers.
+\item \textit{Bundle} A filtered record and associated license.  This is distributed to data consumers.
+\end{itemize}
 
 \begin{figure}[!t]
 \centering
