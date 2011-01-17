@@ -5,49 +5,51 @@ Database file #1: emr.bib
 Database file #2: drm.bib
 Warning--to sort, need author or key in OMADRM
 Warning--to sort, need author or key in ODRL-req
+Warning--to sort, need author or key in Emr:doi:10.1056/NEJMc081118
 Warning--to sort, need author or key in Emr:Web:Jade
 Warning--to sort, need author or key in Emr:Web:Fipa
 Warning--empty author in OMADRM
+Warning--empty author in Emr:doi:10.1056/NEJMc081118
 Warning--can't use both author and editor fields in JaHe:08
-You've used 27 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            687 strings with 8676 characters,
-and the built_in function-call counts, 9281 in all, are:
-= -- 940
-> -- 353
+            702 strings with 9092 characters,
+and the built_in function-call counts, 9948 in all, are:
+= -- 1005
+> -- 368
 < -- 12
-+ -- 147
-- -- 114
-* -- 605
-:= -- 1412
-add.period$ -- 82
-call.type$ -- 27
-change.case$ -- 139
++ -- 154
+- -- 118
+* -- 645
+:= -- 1513
+add.period$ -- 90
+call.type$ -- 30
+change.case$ -- 150
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 407
-empty$ -- 799
-format.name$ -- 114
-if$ -- 2076
+cite$ -- 38
+duplicate$ -- 432
+empty$ -- 871
+format.name$ -- 118
+if$ -- 2224
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 22
-newline$ -- 136
-num.names$ -- 44
-pop$ -- 192
+int.to.str$ -- 30
+missing$ -- 23
+newline$ -- 150
+num.names$ -- 48
+pop$ -- 210
 preamble$ -- 1
-purify$ -- 112
+purify$ -- 120
 quote$ -- 0
-skip$ -- 296
+skip$ -- 317
 stack$ -- 0
-substring$ -- 537
-swap$ -- 117
+substring$ -- 573
+swap$ -- 120
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 6
-while$ -- 79
-width$ -- 29
-write$ -- 305
-(There were 6 warnings)
+type$ -- 118
+warning$ -- 8
+while$ -- 84
+width$ -- 32
+write$ -- 334
+(There were 8 warnings)
