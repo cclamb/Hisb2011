@@ -11,45 +11,45 @@ Warning--to sort, need author or key in Emr:Web:Fipa
 Warning--empty author in OMADRM
 Warning--empty author in Emr:doi:10.1056/NEJMc081118
 Warning--can't use both author and editor fields in JaHe:08
-You've used 30 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            702 strings with 9092 characters,
-and the built_in function-call counts, 9948 in all, are:
-= -- 1005
-> -- 368
+            713 strings with 9368 characters,
+and the built_in function-call counts, 10499 in all, are:
+= -- 1059
+> -- 388
 < -- 12
-+ -- 154
-- -- 118
-* -- 645
-:= -- 1513
-add.period$ -- 90
-call.type$ -- 30
-change.case$ -- 150
++ -- 162
+- -- 124
+* -- 680
+:= -- 1604
+add.period$ -- 96
+call.type$ -- 32
+change.case$ -- 159
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 432
-empty$ -- 871
-format.name$ -- 118
-if$ -- 2224
+cite$ -- 40
+duplicate$ -- 450
+empty$ -- 922
+format.name$ -- 124
+if$ -- 2342
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 23
-newline$ -- 150
-num.names$ -- 48
-pop$ -- 210
+int.to.str$ -- 32
+missing$ -- 24
+newline$ -- 160
+num.names$ -- 52
+pop$ -- 221
 preamble$ -- 1
-purify$ -- 120
+purify$ -- 127
 quote$ -- 0
-skip$ -- 317
+skip$ -- 332
 stack$ -- 0
-substring$ -- 573
-swap$ -- 120
+substring$ -- 610
+swap$ -- 122
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
+type$ -- 126
 warning$ -- 8
-while$ -- 84
-width$ -- 32
-write$ -- 334
+while$ -- 89
+width$ -- 34
+write$ -- 355
 (There were 8 warnings)
