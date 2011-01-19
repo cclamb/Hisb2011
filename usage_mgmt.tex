@@ -98,44 +98,57 @@ We will propose, design, and demonstrate a system that supports granular managem
 
 This kind of system, allowing users control over their data in ways fostering ease of dissemination, use and reuse, helps users receive better, more targed care, helps providers easly access required information, and allows this kind of data to be more easily examined and mined.  We use established system design principles, used in the develoment of internet-scale networks to create a open flexible system \cite{Al:04,BlCl:01,ClWrSoBr:02}.  We will standardize certain features, such as operational semantics and ontological domains, but otherwise limit the impact of the policy system on data dissemination as much as possible.
 
+% Usage Management info goes here
+
 \subsection*{Previous Work}
 Past research applicable to this area includes usage management, digital rights management (DRM), and access control.  Most of the research applicable to the combination of previous arfifacts into a single aggregate artifact comes from the DRM world in particular.  Generally, these expressive languages have been fundamentally based on different types of mathematical logic or formalisms with reasoning capabilities \cite{ArHu:07,BaMi:06,ChCoEtHaJoLa:03,HaWe:04,HaWe:08,PuWe:02,XiBjFu:08}.  This approach, while useful in closed systems, tends to not work as usefully in more open dynamic environments.  This has led to the development of translation mechanisms to address interoperability needs \cite{HeJa:05,PoPrDe:04,ScTaWo:04}.  This translation process is difficult for most policy languages, and in fact infeasible as a result \cite{KoLaMaMi:04,SaShUe:04}.  Alternative approaches have required the use of sophiticated and powerful languages that must be adopted as a universal standard \cite{OMADRM,ODRL-req,Wa:04,XrML-spec}.  This approach inherently limits innovation and flexibility \cite{HeJa:05,JaHe:04,JaHe:08,JaHeMa:06}.
 
-\section*{Implications}
-Engineers and futurists have speculated as to the impact of personal medical records for years \cite{Emr:Web:BestCaseEMR,Emr:Web:WorstCaseEMR}.  Others have speculated on the institutional use of personal medical records by organizations in today's regulated medical environment \cite{Emr:doi:10.1056/NEJMc081118}.  These concerns imply certain requirements on robust medical record systems, making use models and record control more complex.  None of the promises or concerns of personal medical records can be realized or mitigated without strong usage management.
+\section*{New Models}
+Engineers and futurists have speculated as to the impact of personal medical records for years \cite{Emr:Web:BestCaseEMR,Emr:Web:WorstCaseEMR}.  Others have speculated on the institutional use of personal medical records by organizations in today's regulated medical environment \cite{Emr:doi:10.1056/NEJMc081118}.  Health records, when under the control of the person they address, are no longer controlled by the Health Insurance Portability and Accountability Act (HIPPA), though the companies that manage them on the user's behalf in these cases are regulated in most aspects by the Electronic Communications Privacy Act \cite{Emr:doi:10.1056/NEJMsb0800220}.  In total, These concerns imply certain requirements on robust medical record systems, making use models and record control more complex.  None of the promises or concerns of personal medical records can be realized or mitigated without strong usage management.  With a dependable usage management capability, personal medical records open new horizons in the services landscape for interested adopters.
 
-\subsection*{Regulation}
-Health records, when under the control of the person they address, are no longer controlled by the Health Insurance Portability and Accountability Act (HIPPA), though the companies that manage them on the user's behalf in these cases are regulated in most aspects by the Electronic Communications Privacy Act \cite{Emr:doi:10.1056/NEJMsb0800220}.
-
-\subsection*{Remote Information Access}
-Travel
-
-\subsection*{Official Records}
-Schools, immigration
-
-\subsection*{Monitoring}
-Ongoing health monitoring
-
-\subsection*{Custom Care}
-Custom pharma
-
-\subsection*{User Model}
+\subsection*{A Note on Reliability}
 %Consumer, physician(s) (primary, emergency, etc.); editability constraints; auditing
-%who - dr.s
-%what
-%when
-%where
-%why
-%how
 In order for PMRs to be effective, they must be actively used by health care providers.  A system with the wrong kinds of editability constraints or auditing capabilities is at risk of remaining unused by an individual's care providers.  Ideally, these kinds of health records would contain the kind of information a physician would include in a patient's chart.  This is information providers are required to maintain for adequate patient treatment.  If this information can be arbitrarily edited however, it loses it's credibility.
 
-In fact, many employer-sponsored monitoring programs incentivize gold-plating medical histories.  Systems like Virgin HealthMiles are marketing themselves directly to employers as ways to monitor employee health. \cite{Emr:Web:VirginHealthMiles}.
+In fact, many employer-sponsored monitoring programs may incentivize gold-plating medical histories.  Systems like Virgin HealthMiles are marketing themselves directly to employers as ways to monitor employee health. \cite{Emr:Web:VirginHealthMiles}.  Companies are using Virgin HealthMiles to track employee exercise, and as an incentive to use the product (and get more exercise), are offering additional contributions to employer-sponsored health savings accounts if employees meet certain criteria.  Similar senarios could be right around the corner for personal health management systems, were employers incentivize employees to decrease blood pressure, change diet, or similar kinds of things.  In those situations, the pressure for users to alter their records to reflect the reality their employers want to see will be immense, and many users are likely to resort to embellishing their records as a result.
 
-\section*{Underpinnings}
+Once that happens, health care providers can no longer use the records to provide care.
+
+Any system managing these kinds of records must therefore provide mechanisms to certify, if not the accuracy of the provided information, at least the veracity of it.  Care providers must be able to trust the information provided in a given record, and must not be required to shoulder the burden of viewing the record's edit history in order to do so.  This implies a separation of roles between those who can edit the content of a given record, and those who control how the content of that record may be used.
+
+\subsection*{Remote Information Access}
+% Travel, Schools, immigration
+% Travel, schools, immigration:
+% who are the players?
+% what do they need access to?
+% why?
+% when do they need it?
+% where are the players physically located?
+% how would this happen with PMR? Describe system; use scenario
+% address pro/con whereever appropriate
+
+
+\subsection*{Monitoring}
+% Ongoing health monitoring
+% who would use this and why?
+% what do they want to see?
+% when? what are the implications of that?
+% how would this happen? is it coersive? describe system; use scenario
+% more pro/con
+
+\subsection*{Custom Care}
+% Custom pharma
+% What exactly is this, and why would users care?
+% how would it work?
+% who would use it?
+% describe system; use scenario
+% pro/con
+
+\subsection*{Data Marketplace}
 %Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
 The system we describe in the following sections incorporates a market to allow users and brokers to profit from the use of electronic medical data released under mutually acceptable terms, where usage policies accompany filtered data for either dynamic or static evaluation.  Usage policies themselves are essentially unlimited in how they describe the use of a specific medical record.
 
-\subsection*{Marketplace} 
+\section*{Sample System - Data Marketplace}
 % Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
 Here, we incentivize electronic medical record adoption via the use of a data marketplace.  We have three primary categories of users in mind:
 
@@ -169,9 +182,6 @@ Usage terms in a successful conclusion generally describe what the \textit{data 
 
 The market implemented in this system is built around JADE, an open source agent develoment framework based on FIPA agent specifications \cite{Emr:Web:Jade,Emr:Web:Fipa}.
 
-\subsection*{Usage Management}
-describe how the usage management system works
-
 \subsection*{System Ontology}
 %Describe ontology, describe relationships, define elements; this is a system meta-model; who uses it, what it is (describe/define), why is it important, where, when, how is it used
 This system is built around a common ontology that needs must be understood by any system developers.  It is currently used to define relationships and entities within the system at design and run time.  The primary elements in this ontology are:
@@ -198,21 +208,6 @@ This system is built around a common ontology that needs must be understood by a
 Usage policies can be evaluated over a spectrum bordered by two distinct approaches - either dynamically, at request time, or statically, when a bundle is created.  Pure dynamic policy evaluation evaluates the entire policy against an artifact at \textit{request time}, specifically and only when a request for an action is made by a consumer.  Static evaluation only occurs when \textit{the bundle is created} and is not evaluated at any later time.  While dynamic policies are more powerful, static policies are generally simpler to define, create, and apply.  Dynamic policy evaluation requires significant runtime infrastructure as well, which static evaluation will never require.  Furthermore, that runtime infrastructure must be present in a variety of systems, implemented upon a myrad of platforms in a slew of different programming languages.  Still, we have compelling reasons for developing dynamic evaluation systems.  Static systems can't evaluate dynamic properties well.  Attributes like time are impossible to adjudicate with the simplest of static licenses and require some kind of dynamic evaluation.  Likewise, evaluation of a bundle's context is equally impossible to do with simple static policies.  Dynamic policies are more suitable for content that producers are interested in providing for unexpected use, while static policies generally only support predefined use scenarios.
 
 In this system, we propose to use a combination of static and dynamic approaches.  Static policy evaluation occurs immediately after negotiation between the producer and consumer, when a filter is applied to the medical record.  This simplifies dynamic policy requirements by limiting the data that needs to be evaluated after the bundle is released.  If this filter were not applied, the dynamic policy would need to additional clauses to support hiding only those data elements to which the consumer has not been granted access.  All other evaluation occurs after the bundle is delivered to the consumer.  In order to support more complex and unenvisioned usage scenarios, including evaluating usage based on time constraints, this framework provides extensive dynamic evaluation capabilities after the initial filtering phase.  We also need to be able to support seamless operation over protected artifacts while disconnected from any kind of network or communication medium.  These factors lead to a powerful \textit{and local} dynamic policy evaluation system.
-
-\section*{System}
-%Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
-
-\subsection*{Cases and Scenarios}
-Outline the use cases, describe them, map them to specific scenarios
-
-\subsection*{Scenario 1: Negotiation}
-Demonstrate and present results; negotiation over specific information contained in a EMR
-
-\subsection*{Scenario 2: Aggregate Assembly}
-Demonstrate and present results; assemble data elements into a single data set; show both usage term compliance and non-compliance
-
-\subsection*{Scenario 3: Aggregate Submission}
-Demonstrate and present results; insert new set into marketplace; demonstrate acquisition of set and traceability back to individual elements
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
