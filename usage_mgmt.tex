@@ -28,7 +28,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Usage Management of Electronic Medical Records}
+\title{Usage Management of Personal Medical Records}
 
 
 % author names and affiliations
@@ -68,7 +68,7 @@ Albuquerque, NM 87131-0001 \\
 
 
 \begin{abstract}
-Electronic medical record management is under new scruitiny as private companies move into the market and government agencies actively address percieved health care distribution inequalities and inefficiencies.  Current systems are coarse-grained and provide consumers very little actual control over their data.  Herein, we propose an alternative system for managing the use of healthcare infomormation.  This system is more granular, allows for data mining and repackaging, and gives users more control over data while allowing said data to be distributed as much as needed.  In this paper, we outline the characteristics of such a system, present relavant background information and research leading to the system design, and cover two specific use scenarios supported by this system that are difficult to control using simpler access control strategies.
+Electronic medical record management is under new scruitiny as private companies move into the market and government agencies actively address percieved health care distribution inequalities and inefficiencies.  Current systems are coarse-grained and provide consumers very little actual control over their data.  Herein, we propose an alternative system for managing the use of healthcare infomormation.  This system is finer grained, allows for data mining and repackaging, and gives users more control over data while allowing said data to be distributed as much as needed.  In this paper, we outline the characteristics of such a system, present relavant background information and research leading to the system design, and cover two specific usage scenarios supported by this system that are difficult to control using simpler access control strategies.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -88,25 +88,25 @@ usage management; electronic medical records
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-\section*{Introduction}
+\section{Introduction}
 % no \IEEEPARstart
-New healthcare legislation has spurred previously unknown levels of public and private investment into technologies supporting more efficient healthcare delivery \cite{Emr:Web:Recovery}.   An active area of examination is electronic health records.  Current systems, like Microsoft HealthVault and Google Health are a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Emr:EvaluationHealthInf}.
+New healthcare legislation has spurred previously unknown levels of public and private investment in technologies supporting more efficient healthcare delivery \cite{Emr:Web:Recovery}.   An active area of examination is electronic health records.  Current systems, such as Microsoft HealthVault and Google Health are a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Emr:EvaluationHealthInf}.
 
-We propose an open, consumer-centric approach to health information storage and consumption centered around flexible and granular usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed \cite{Emr:PyAmWaCr}.  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to specific healthcare providers who need specific information to support diagnoses.  Furthermore, institutions would be able to combine information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of the policy conflict.
+We propose an open, consumer-centric approach to health information storage and consumption centered around flexible and fine grained usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed \cite{Emr:PyAmWaCr}.  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to specific healthcare providers who need specific information to support diagnoses.  Furthermore, institutions would be able to combine information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of the policy conflict.
 
-We will propose, design, and demonstrate a system that supports granular management of the data elements of an electronic medical record.  This management will allow users to specify policies over the data itself rather than the entire record in question, providing control over information dissemination.  We will demonstrate this control in three distinct scenarios.  The first will include two distinct parties negotiating over access to specific information contained in a medical record.  If the parties can reach an agreement, the information consumer will be granted access to specific medical data, for an agreed-upon price.  The second demostrates a data broker combining a set of previously acquired medical record data into an aggregate set for research, if the licensure is in fact compliant between all selelected data elements.  Finally, the aggregated data set will be placed back into the market.
+We propose, design, and demonstrate a system that supports granular management of the data elements of an electronic medical record.  This management will allow users to specify policies over the data itself rather than the entire record in question, providing control over information dissemination.  We will demonstrate this control in three distinct scenarios.  The first will include two distinct parties negotiating over access to specific information contained in a medical record.  If the parties can reach an agreement, the information consumer will be granted access to specific medical data, for an agreed-upon price.  The second demostrates a data broker combining a set of previously acquired medical record data into an aggregate set for research, if the licensure is in fact compliant between all selelected data elements.  Finally, the aggregated data set will be placed back into the market.
 
-This kind of system, allowing users control over their data in ways fostering ease of dissemination, use and reuse, helps users receive better, more targed care, helps providers easly access required information, and allows this kind of data to be more easily examined and mined.  We use established system design principles, used in the develoment of internet-scale networks to create a open flexible system \cite{Al:04,BlCl:01,ClWrSoBr:02}.  We will standardize certain features, such as operational semantics and ontological domains, but otherwise limit the impact of the policy system on data dissemination as much as possible.
+This kind of system, allowing users control over their data in ways fostering ease of dissemination, use and reuse, helps users receive better, more targed care, helps providers easly access required information, and allows this kind of data to be more easily examined and mined.  We use established system design principles, used in the develoment of internet-scale networks to create a open flexible system \cite{Al:04,BlCl:01,ClWrSoBr:02}.  We standardize certain features, such as operational semantics and ontological domains, but otherwise limit the impact of the policy system on data dissemination as much as possible.
 
 % Usage Management info goes here
 
-\subsection*{Previous Work}
+\subsection{Previous Work}
 Past research applicable to this area includes usage management, digital rights management (DRM), and access control.  Most of the research applicable to the combination of previous arfifacts into a single aggregate artifact comes from the DRM world in particular.  Generally, these expressive languages have been fundamentally based on different types of mathematical logic or formalisms with reasoning capabilities \cite{ArHu:07,BaMi:06,ChCoEtHaJoLa:03,HaWe:04,HaWe:08,PuWe:02,XiBjFu:08}.  This approach, while useful in closed systems, tends to not work as usefully in more open dynamic environments.  This has led to the development of translation mechanisms to address interoperability needs \cite{HeJa:05,PoPrDe:04,ScTaWo:04}.  This translation process is difficult for most policy languages, and in fact infeasible as a result \cite{KoLaMaMi:04,SaShUe:04}.  Alternative approaches have required the use of sophiticated and powerful languages that must be adopted as a universal standard \cite{OMADRM,ODRL-req,Wa:04,XrML-spec}.  This approach inherently limits innovation and flexibility \cite{HeJa:05,JaHe:04,JaHe:08,JaHeMa:06}.
 
-\section*{New Models}
+\section{New Models}
 Engineers and futurists have speculated as to the impact of personal medical records for years \cite{Emr:Web:BestCaseEMR,Emr:Web:WorstCaseEMR}.  Others have speculated on the institutional use of personal medical records by organizations in today's regulated medical environment \cite{Emr:doi:10.1056/NEJMc081118}.  Health records, when under the control of the person they address, are no longer controlled by the Health Insurance Portability and Accountability Act (HIPPA), though the companies that manage them on the user's behalf in these cases are regulated in most aspects by the Electronic Communications Privacy Act \cite{Emr:doi:10.1056/NEJMsb0800220}.  In total, These concerns imply certain requirements on robust medical record systems, making use models and record control more complex.  None of the promises or concerns of personal medical records can be realized or mitigated without strong usage management.  With a dependable usage management capability, personal medical records open new horizons in the services landscape for interested adopters.
 
-\subsection*{A Note on Reliability}
+\subsection{A Note on Reliability}
 %Consumer, physician(s) (primary, emergency, etc.); editability constraints; auditing
 In order for PMRs to be effective, they must be actively used by health care providers.  A system with the wrong kinds of editability constraints or auditing capabilities is at risk of remaining unused by an individual's care providers.  Ideally, these kinds of health records would contain the kind of information a physician would include in a patient's chart.  This is information providers are required to maintain for adequate patient treatment.  If this information can be arbitrarily edited however, it loses it's credibility.
 
@@ -116,7 +116,7 @@ Once that happens, health care providers can no longer use the records to provid
 
 Any system managing these kinds of records must therefore provide mechanisms to certify, if not the accuracy of the provided information, at least the veracity of it.  Care providers must be able to trust the information provided in a given record, and must not be required to shoulder the burden of viewing the record's edit history in order to do so.  This implies a separation of roles between those who can edit the content of a given record, and those who control how the content of that record may be used.
 
-\subsection*{Remote Information Access}
+\subsection{Remote Information Access}
 % Travel, schools, immigration:
 % who are the players?
 % what do they need access to?
@@ -133,15 +133,18 @@ Importantly, access need not be granted permanently.  Both administrators and fo
 
 The ability to provide care information in a secure, manageable way in these scenarios saves users significant time and headache.  Rounding up and delivering vaccination records to school adminstrators is time consuming and stressful.  Receiving emergency health care in foriegn countries is more than a little frightening.  Systems that can help ameliorate these kinds of situations would certainly be useful.  Furthermore, without specific controls over specific data elements composing a given record, these users cannot be appropriately limited in their access.
 
-\subsection*{Monitoring}
+\subsection{Monitoring}
 % Ongoing health monitoring
 % who would use this and why?
 % what do they want to see?
 % when? what are the implications of that?
 % how would this happen? is it coersive? describe system; use scenario
 % more pro/con
+To constrain health care costs, some employers are beginning to implement holistic preventative health programs.  These programs are structured to attempt to lower overall healthcare costs for a large group of employees through regular screenings, exercise programs, and key health marker monitoring.  Employers are interested in monitoring indicators like trigyceride levels, serum cholesterol, HDL/LDL ratios, blood glucose, blood pressure, and the like.  Employee participation is not neccessarily mandated, but can be encouraged through additional contributions to health savings accounts for participating employees.  In these cases, employers have specific things in which they have an interest. Employees on the other hand likely have information in their care records they very much want to keep out of their employers hands.  For example, an employee may very much want the additional HSA contribution for her family, but is not inclined to let her employer know about her anti-depression medications or her recent treatment for alcohol dependency.
 
-\subsection*{Custom Care}
+A dependable usage management system supports this kind of partitioned use.  With appropriate controls, this information can be centralized and controlled by the record owner, who can create limited access for employers.  Furthermore, this kind of information can be aggregated by the user over a period of years, demonstrating a pattern of healthy behavior, and perhaps making that record owner more attractive to future employers.  Sensitive information can still be controlled by limiting access.
+
+\subsection{Custom Care}
 % Custom pharma
 % What exactly is this, and why would users care?
 % how would it work?
@@ -149,11 +152,11 @@ The ability to provide care information in a secure, manageable way in these sce
 % describe system; use scenario
 % pro/con
 
-\subsection*{Data Marketplace}
+\subsection{Data Marketplace}
 %Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
 The system we describe in the following sections incorporates a market to allow users and brokers to profit from the use of electronic medical data released under mutually acceptable terms, where usage policies accompany filtered data for either dynamic or static evaluation.  Usage policies themselves are essentially unlimited in how they describe the use of a specific medical record.
 
-\section*{Sample System - Data Marketplace}
+\section{Sample System - Data Marketplace}
 % Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
 Here, we incentivize electronic medical record adoption via the use of a data marketplace.  We have three primary categories of users in mind:
 
@@ -183,11 +186,11 @@ Here, we incentivize electronic medical record adoption via the use of a data ma
 \item Eventually, the negotiation will conclude with the parties having reached an agreement describing access to specific medical data with associated term or having failed to come to mutually acceptable terms with respect to data access.  
 \end{enumerate}
 
-Usage terms in a successful conclusion generally describe what the \textit{data consumer} can access, how and for how long, where it may be accessed, and so on.  It will also usually describe some kind of payment for use, which can be based on any arbitrary number of factors such as time, date, location, attribution, or perhaps in combination with other data.
+Usage terms in a successful conclusion generally describe what the \textit{data consumer} can access, how they may use it and for how long, where it may be accessed, and so on.  It will also usually describe some kind of payment for use, which can be based on any arbitrary number of factors such as time, date, location, attribution, or perhaps in combination with other data.
 
 The market implemented in this system is built around JADE, an open source agent develoment framework based on FIPA agent specifications \cite{Emr:Web:Jade,Emr:Web:Fipa}.
 
-\subsection*{System Ontology}
+\subsection{System Ontology}
 %Describe ontology, describe relationships, define elements; this is a system meta-model; who uses it, what it is (describe/define), why is it important, where, when, how is it used
 This system is built around a common ontology that needs must be understood by any system developers.  It is currently used to define relationships and entities within the system at design and run time.  The primary elements in this ontology are:
 \begin{itemize}
@@ -196,7 +199,7 @@ This system is built around a common ontology that needs must be understood by a
 \item \textit{Record} A medical record.  We can envision this as a set of discrete medical facts.
 \item \textit{Filter} A transformation of a medical record.  If we have a record $ r $, we can transform $ r $ into $ r' $ by applying a transformation $ t $ such that $ r' = t(r) $ where $ t : record \rightarrow record $ and $ r' \subseteq r $.
 \item \textit{Filtered Record} A filtered record is a record to which a filter has been applied.  If we have a filtered record $ r' $ derived from a record $ r $, then $ r' \subseteq r $.
-\item \textit{License} A license describes the usage policy associated with a given filtered record.  This controls all aspects of filtered record use by an associated consumer.  The specific terms are negotiated over by the producer and the consumer until some consensus is reached, and they then bind the use of an associated filtered record.  Licenses must provide the ability to trace use of transitively associated artifacts regardless of the degree of separation as well.  For example, if we have an artifact $ a $ composed of sets of data elements $ e_{0}, e_{1}, ... , e_{n} $ derived from records $ r_{0}, r_{1}, ... , r_{n} $, we need to be able to ensure that any use of a set of data elements $ e_{i}, i < n $ is within the policy bounds of record $ r_{i}, i < n $ and any compensation associated with such use is correctly attributed to the original data owners and brokers.
+\item \textit{License} A license describes the usage policy associated with a given filtered record.  This controls all aspects of filtered record use by an associated consumer.  The specific terms are negotiated over by the producer and the consumer until some optimal consensus is reached, and they then bind the use of an associated filtered record.  Licenses must provide the ability to trace use of transitively associated artifacts regardless of the degree of separation as well.  For example, if we have an artifact $ a $ composed of sets of data elements $ e_{0}, e_{1}, ... , e_{n} $ derived from records $ r_{0}, r_{1}, ... , r_{n} $, we need to be able to ensure that any use of a set of data elements $ e_{i}, i < n $ is within the policy bounds of record $ r_{i}, i < n $ and any compensation associated with such use is correctly attributed to the original data owners and brokers.
 \item \textit{Bundle} A filtered record and associated license.  This is distributed to data consumers.
 \end{itemize}
 
@@ -207,10 +210,10 @@ This system is built around a common ontology that needs must be understood by a
 \label{System Ontology}
 \end{figure}
 
-\subsection*{Dynamic and Static Policy Evaluation}
+\subsection{Dynamic and Static Policy Evaluation}
 %what who when where why how
 %(what) define dynamic and static policy evaluation, elucidate specific advantages/disadvantages of each & where used, go over which we need to use here and why
-Usage policies can be evaluated over a spectrum bordered by two distinct approaches - either dynamically, at request time, or statically, when a bundle is created.  Pure dynamic policy evaluation evaluates the entire policy against an artifact at \textit{request time}, specifically and only when a request for an action is made by a consumer.  Static evaluation only occurs when \textit{the bundle is created} and is not evaluated at any later time.  While dynamic policies are more powerful, static policies are generally simpler to define, create, and apply.  Dynamic policy evaluation requires significant runtime infrastructure as well, which static evaluation will never require.  Furthermore, that runtime infrastructure must be present in a variety of systems, implemented upon a myrad of platforms in a slew of different programming languages.  Still, we have compelling reasons for developing dynamic evaluation systems.  Static systems can't evaluate dynamic properties well.  Attributes like time are impossible to adjudicate with the simplest of static licenses and require some kind of dynamic evaluation.  Likewise, evaluation of a bundle's context is equally impossible to do with simple static policies.  Dynamic policies are more suitable for content that producers are interested in providing for unexpected use, while static policies generally only support predefined use scenarios.
+Usage policies can be evaluated over a spectrum bordered by two distinct approaches - either dynamically, at request time, or statically, when a bundle is created.  Pure dynamic policy evaluation evaluates the entire policy against an artifact at \textit{request time}, specifically and only when a request for an action is made by a consumer.  Static evaluation only occurs when \textit{the bundle is created} and is not evaluated at any later time.  While dynamic policies are more powerful, static policies are generally simpler to define, create, and apply.  Dynamic policy evaluation requires significant runtime infrastructure as well, which static evaluation will never require.  Furthermore, that runtime infrastructure must be present in a variety of systems, implemented upon a myrad of platforms in a slew of different programming languages.  Still, we have compelling reasons for developing dynamic evaluation systems.  Static systems cannot evaluate dynamic properties well.  Attributes like time are impossible to adjudicate with the simplest of static licenses and require some kind of dynamic evaluation.  Likewise, evaluation of a bundle's context is equally impossible to do with simple static policies.  Dynamic policies are more suitable for content that producers are interested in providing for unexpected use, while static policies generally only support predefined use scenarios.
 
 In this system, we propose to use a combination of static and dynamic approaches.  Static policy evaluation occurs immediately after negotiation between the producer and consumer, when a filter is applied to the medical record.  This simplifies dynamic policy requirements by limiting the data that needs to be evaluated after the bundle is released.  If this filter were not applied, the dynamic policy would need to additional clauses to support hiding only those data elements to which the consumer has not been granted access.  All other evaluation occurs after the bundle is delivered to the consumer.  In order to support more complex and unenvisioned usage scenarios, including evaluating usage based on time constraints, this framework provides extensive dynamic evaluation capabilities after the initial filtering phase.  We also need to be able to support seamless operation over protected artifacts while disconnected from any kind of network or communication medium.  These factors lead to a powerful \textit{and local} dynamic policy evaluation system.
 
@@ -298,7 +301,7 @@ In this system, we propose to use a combination of static and dynamic approaches
 
 
 
-\section*{Conclusion}
+\section{Conclusion}
 Evaluate results and outline future work
 
 % conference papers do not normally have an appendix
