@@ -170,7 +170,14 @@ This type of system has a group of attributes and requirments that it must embod
 \item \textit{Accessibility} Some of the outlined scenarios directly imply wide accessiblility geographically, while others require access to medical information from devices with a variety of form factors ranging from modern smartphones to tables to desktop computers.  Still others require data to be delivered through data-centric rather than human readable means.  Not providing this kind of open, widely accessible system makes data entry and eventual use prohibitively difficult.
 \item \textit{Performance} Core functionality must be high performance.  Data entry must be engaging and responsive, or providers will simply abandon the system for other, more traditional ways of recording user information.  Data retrieval must be likewise snappy, especially in critical care scenarios.
 \item \textit{Flexibility} This system and the data it manages can be used in a wide variety of contexts.  In order to remain relevant, it must be flexible enough to be easily integrated with other arbitrary systems in both de-facto (e.g. RESTful access) and officially standardized (e.g. WS-* SOAP-centric access) ways.
-\end{itemize}  
+\item \textit{Extensibility} It must provide programmatic interfaces to allow integrations with other currently unknown systems.  Not doing so limits how users can access and expoit the information they own.
+\end{itemize}
+The system as a whole provides management of personal medical records, which must obviously be addressed by any proposed system architecture.  This management includes record creation, read, and update. It should not delete any data healthcare data, but other less sensitive information should be deletable.
+
+Other features like notifications on certain predefined events or predefined integrations with systems like twitter or facebook may certainly be useful, but are not core functionalities the system must provide.  They should be able to be addressed via core extensibility mechanisms and programming interfaces however.  
+
+\subsection{Sample System Architecture}
+
 
 \section{Sample System - Data Marketplace}
 % Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
