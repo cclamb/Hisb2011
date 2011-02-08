@@ -177,7 +177,16 @@ The system as a whole provides management of personal medical records, which mus
 Other features like notifications on certain predefined events or predefined integrations with systems like twitter or facebook may certainly be useful, but are not core functionalities the system must provide.  They should be able to be addressed via core extensibility mechanisms and programming interfaces however.  
 
 \subsection{Sample System Architecture}
-A potential system architecture fulfilling the currently known attributes and requirements is outlined in Figure ~\ref{fig:RuntimeView}.
+Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfilling the currently known attributes and requirements.  This runtime component view contains potential packages, interfaces, and components comprising a medical record usage managment system.  Specific packages include:
+\begin{itemize}
+\item \textit{External Use} This package contains all user facing elements including all HTTP access.  Mobile, desktop, and programming interfaces accessed by external users are contained in this package, as are all components providing this kind of functionality.
+\item \textit{Development Use} This is another package containing system user access elements, but is intended to contain all private components used to access the system.  This package includes command line interfaces, allowing access via the interactive ruby shell, the Clojure read-eval-print-loop, or similar systems.  All system tests are defined here as well.  This includes unit tests, functional tests, and integration tests as well.
+\item \textit{System}
+\item \textit{Communication}
+\item \textit{Data}
+\end{itemize}
+
+
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{HisbSystemArch}
