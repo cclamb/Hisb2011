@@ -172,20 +172,10 @@ This type of system has a group of attributes and requirments that it must embod
 \item \textit{Flexibility} This system and the data it manages can be used in a wide variety of contexts.  In order to remain relevant, it must be flexible enough to be easily integrated with other arbitrary systems in both de-facto (e.g. RESTful access) and officially standardized (e.g. WS-* SOAP-centric access) ways.
 \item \textit{Extensibility} It must provide programmatic interfaces to allow integrations with other currently unknown systems.  Not doing so limits how users can access and expoit the information they own.
 \end{itemize}
+
 The system as a whole provides management of personal medical records, which must obviously be addressed by any proposed system architecture.  This management includes record creation, read, and update. It should not delete any data healthcare data, but other less sensitive information should be deletable.
 
 Other features like notifications on certain predefined events or predefined integrations with systems like twitter or facebook may certainly be useful, but are not core functionalities the system must provide.  They should be able to be addressed via core extensibility mechanisms and programming interfaces however.  
-
-\subsection{Sample System Architecture}
-Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfilling the currently known attributes and requirements.  This runtime component view contains potential packages, interfaces, and components comprising a medical record usage managment system.  Specific packages include:
-\begin{itemize}
-\item \textit{External Use} This package contains all user facing elements including all HTTP access.  Mobile, desktop, and programming interfaces accessed by external users are contained in this package, as are all components providing this kind of functionality.
-\item \textit{Development Use} This is another package containing system user access elements, but is intended to contain all private components used to access the system.  This package includes command line interfaces, allowing access via the interactive ruby shell, the Clojure read-eval-print-loop, or similar systems.  All system tests are defined here as well.  This includes unit tests, functional tests, and integration tests as well.
-\item \textit{System}
-\item \textit{Communication}
-\item \textit{Data}
-\end{itemize}
-
 
 \begin{figure}[!t]
 \centering
@@ -193,6 +183,32 @@ Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfillin
 \caption{System Architecture Runtime Component View}
 \label{fig:RuntimeView}
 \end{figure}
+
+\subsection{Sample System Architecture}
+Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfilling the currently known attributes and requirements.  This runtime component view contains potential packages, interfaces, and components comprising a medical record usage managment system.  Note that this system architecture is currently technology agnostic.  Specific packages include:
+\begin{itemize}
+\item \textit{External Use} This package contains all user facing elements including all HTTP access.  Mobile, desktop, and programming interfaces accessed by external users are contained in this package, as are all components providing this kind of functionality.
+\item \textit{Development Use} This is another package containing system user access elements, but is intended to contain all private components used to access the system.  This package includes command line interfaces, allowing access via the interactive ruby shell, the Clojure read-eval-print-loop, or similar systems.  All system tests are defined here as well.  This includes unit tests, functional tests, and integration tests as well.
+\item \textit{System} The system package contains the core system interface(s) and components.  These contain all the system specific logic, including any downloaded policies, licenses and the like.
+\item \textit{Communication} Communication libraries and components are contained in this package.  Currently, we forsee the need for some kind of queueing component providing asynchronous data transfer between the core components and data stores.
+\item \textit{Data} The final package contains data stores for the system.  We are using separate data stores to both enhance security and provide additional data storage flexibility.
+\end{itemize}
+
+Various components could be mapped to disparate technologies, even within the same package.  For example, the core system component could consist of a variety of ruby gems, running in an application hosted on Heroku, with tests in RSpec, and a command line interface to support granular user story experimentation.  Queuing components could be hosed on Amazon's Simple Queue Service (SQS), while Application data is hosted in a database in Heroku, Record Data via Cloud Files on rackspace, and Audit Data in a store hosted via Amazon Simple Storage Service (S3).
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{UMOntology}
+\caption{System Usage Management Ontology}
+\label{fig:Ontology}
+\end{figure}
+
+\subsection{Usage Management}
+
+
+\subsection{System Architecture and Attributes}
+The system architecture described fulfils the various driving requirements and attributes.  First, 
 
 \section{Sample System - Data Marketplace}
 % Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
