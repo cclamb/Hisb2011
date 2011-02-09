@@ -194,8 +194,7 @@ Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfillin
 \item \textit{Data} The final package contains data stores for the system.  We are using separate data stores to both enhance security and provide additional data storage flexibility.
 \end{itemize}
 
-Various components could be mapped to disparate technologies, even within the same package.  For example, the core system component could consist of a variety of ruby gems, running in an application hosted on Heroku, with tests in RSpec, and a command line interface to support granular user story experimentation.  Queuing components could be hosed on Amazon's Simple Queue Service (SQS), while Application data is hosted in a database in Heroku, Record Data via Cloud Files on rackspace, and Audit Data in a store hosted via Amazon Simple Storage Service (S3).
-
+Various components could be mapped to disparate technologies, even within the same package.  For example, the core system component could consist of a variety of ruby gems, running in an application hosted on Heroku, with tests in RSpec, and a command line interface to support granular user story experimentation.  Queuing components could be hosed on Amazon's Simple Queue Service (SQS), while Application data is hosted in a database in Heroku, Record Data via Cloud Files on rackspace, and Audit Data in a store hosted via Amazon Simple Storage Service (S3).  The entire system would use standard security and trusted computing technologies.
 
 \begin{figure}[!t]
 \centering
@@ -205,14 +204,14 @@ Various components could be mapped to disparate technologies, even within the sa
 \end{figure}
 
 \subsection{Usage Management}
-
+In order to apply usage management to a medical record, we must first define an ontology over the records we plan to manage.  In Figure ~\ref{fig:Ontology}, we have outlined a simple sample ontology in a static entity view for this domain.  In essence, we associate a group of \textit{facts} with a single \textit{record}, both of which are instances of managed \textit{resources}.  A \textit{resource} is associated with a \textit{role}, and that is an instance of a \textit{subject}.  Finally, all \textit{resources} and \textit{subjects} are related to a \textit{context}, which also refers to a given \textit{environment}.
 
 \subsection{System Architecture and Attributes}
-The system architecture described fulfils the various driving requirements and attributes.  First, 
+The system architecture described fulfils the various driving requirements and attributes.  First, we support finely managed \textit{editability} constraints via the association of \textit{facts} with \textit{roles}.  \textit{Roles}, as shown in Figure ~\ref{fig:Ontology}, are first-order system entities.  The system architecture supports \textit{auditability} via the Queueing and Audit Data components and the IQueue and IAudit interfaces.  \textit{Security} emerges from the system architecture via data partitioning and the use of standard security and trusted computing technologies.  We address \textit{accessibility} contraints via the Desktop, Mobile, and Programming application interfaces.  The system can flexibly address \textit{performance} issues within the Core component behind the ICore interface.  Judicious use of queueing enhances \textit{performance} as well.  Finally, \textit{flexibility} and \textit{extensibility} emerge from the loosely coupled componentry and publically exposed programming interfaces.
 
 \section{Sample System - Data Marketplace}
 % Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
-Here, we incentivize electronic medical record adoption via the use of a data marketplace.  We have three primary categories of users in mind:
+A data marketplace for medical data through which users can generate revenue from exposing medical information of their choosing is one possible business model we previously described.  Here, as a proof of concept of our proposed system architecture, we incentivize electronic medical record adoption via the use of a data marketplace.  We have three primary categories of users in mind:
 
 \begin{figure}[!t]
 \centering
