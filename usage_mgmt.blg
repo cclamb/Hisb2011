@@ -10,45 +10,45 @@ Database file #2: drm.bib
 Warning--empty author in Emr:doi:10.1056/NEJMc081118
 
 Done.
-You've used 33 entries,
+You've used 36 entries,
             4039 wiz_defined-function locations,
-            1031 strings with 12835 characters,
-and the built_in function-call counts, 21575 in all, are:
-= -- 1714
-> -- 398
-< -- 158
-+ -- 228
-- -- 62
-* -- 1007
-:= -- 3233
-add.period$ -- 69
-call.type$ -- 33
-change.case$ -- 36
-chr.to.int$ -- 369
-cite$ -- 34
-duplicate$ -- 1648
-empty$ -- 1951
-format.name$ -- 82
-if$ -- 5003
+            1050 strings with 13252 characters,
+and the built_in function-call counts, 23480 in all, are:
+= -- 1897
+> -- 433
+< -- 169
++ -- 246
+- -- 68
+* -- 1093
+:= -- 3565
+add.period$ -- 75
+call.type$ -- 36
+change.case$ -- 41
+chr.to.int$ -- 393
+cite$ -- 37
+duplicate$ -- 1792
+empty$ -- 2083
+format.name$ -- 91
+if$ -- 5426
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 297
-newline$ -- 126
-num.names$ -- 26
-pop$ -- 716
+int.to.str$ -- 36
+missing$ -- 328
+newline$ -- 135
+num.names$ -- 29
+pop$ -- 773
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1661
+skip$ -- 1813
 stack$ -- 0
-substring$ -- 898
-swap$ -- 1268
-text.length$ -- 35
+substring$ -- 961
+swap$ -- 1386
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 33
+type$ -- 36
 warning$ -- 1
-while$ -- 88
-width$ -- 35
-write$ -- 325
+while$ -- 95
+width$ -- 38
+write$ -- 358
 (There was 1 warning)
