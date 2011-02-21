@@ -10,45 +10,45 @@ Database file #2: drm.bib
 Warning--empty author in Emr:doi:10.1056/NEJMc081118
 
 Done.
-You've used 36 entries,
+You've used 37 entries,
             4039 wiz_defined-function locations,
-            1050 strings with 13252 characters,
-and the built_in function-call counts, 23480 in all, are:
-= -- 1897
-> -- 433
+            1056 strings with 13445 characters,
+and the built_in function-call counts, 23984 in all, are:
+= -- 1930
+> -- 446
 < -- 169
-+ -- 246
-- -- 68
-* -- 1093
-:= -- 3565
-add.period$ -- 75
-call.type$ -- 36
-change.case$ -- 41
++ -- 252
+- -- 71
+* -- 1118
+:= -- 3641
+add.period$ -- 77
+call.type$ -- 37
+change.case$ -- 42
 chr.to.int$ -- 393
-cite$ -- 37
-duplicate$ -- 1792
-empty$ -- 2083
-format.name$ -- 91
-if$ -- 5426
+cite$ -- 38
+duplicate$ -- 1837
+empty$ -- 2143
+format.name$ -- 95
+if$ -- 5543
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 328
-newline$ -- 135
-num.names$ -- 29
-pop$ -- 773
+int.to.str$ -- 37
+missing$ -- 338
+newline$ -- 138
+num.names$ -- 30
+pop$ -- 802
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1813
+skip$ -- 1849
 stack$ -- 0
-substring$ -- 961
-swap$ -- 1386
+substring$ -- 962
+swap$ -- 1411
 text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 36
+type$ -- 37
 warning$ -- 1
-while$ -- 95
-width$ -- 38
-write$ -- 358
+while$ -- 96
+width$ -- 39
+write$ -- 366
 (There was 1 warning)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  21 FEB 2011 00:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  21 FEB 2011 00:33
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -185,18 +185,18 @@ Underfull \vbox (badness 4543) has occurred while \output is active []
 File: ./images/UMOntology.jpg Graphic file (type jpg)
 
 <use ./images/UMOntology.jpg>
-
-LaTeX Warning: Citation `JaHeLa:10' on page 5 undefined on input line 204.
-
 <./images/roles.jpg, id=22, 327.2225pt x 150.5625pt>
 File: ./images/roles.jpg Graphic file (type jpg)
  <use ./images/roles.jpg>
-[5 <./images/UMOntology.jpg> <./images/roles.jpg>]
+[5 <./images/UMOntology.jpg>]
 <./images/ontology.jpg, id=26, 483.8075pt x 313.17pt>
 File: ./images/ontology.jpg Graphic file (type jpg)
 
-<use ./images/ontology.jpg> [6 <./images/ontology.jpg>] (./usage_mgmt.bbl
-[7]
+<use ./images/ontology.jpg> [6 <./images/roles.jpg>]
+Underfull \vbox (badness 4254) has occurred while \output is active []
+
+
+(./usage_mgmt.bbl [7 <./images/ontology.jpg>]
 Underfull \hbox (badness 1383) in paragraph at lines 114--117
 []\OT1/ptm/m/n/9 R. Safavi-Naini, N. P. Shep-pard, and T. Ue-hara, ``Im-
  []
@@ -231,7 +231,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 192--194
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
 []\OT1/ptm/m/n/9 ``The Foun-da-tion for In-tel-li-gent Phys-i-cal Agents,''
  []
 
@@ -247,32 +247,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8] (./usage_mgmt.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[8] (./usage_mgmt.aux) ) 
 Here is how much of TeX's memory you used:
- 1686 strings out of 493848
- 26443 string characters out of 3149207
- 84354 words of memory out of 3000000
+ 1685 strings out of 493848
+ 26437 string characters out of 3149207
+ 85358 words of memory out of 3000000
  4986 multiletter control sequences out of 15000+200000
- 37621 words of font info for 71 fonts, out of 3000000 for 9000
+ 36514 words of font info for 70 fonts, out of 3000000 for 9000
  717 hyphenation exceptions out of 8191
  26i,8n,23p,1437b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2009/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
-ive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
-e/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
-2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/200
-9/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2009
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2009/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2009/texmf-dist/
-fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2009/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on usage_mgmt.pdf (8 pages, 264241 bytes).
+{/usr/local/texlive/2009/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+/usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
+r/local/texlive/2009/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
+xlive/2009/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/200
+9/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2009/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on usage_mgmt.pdf (8 pages, 264752 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
