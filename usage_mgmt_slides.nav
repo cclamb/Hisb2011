@@ -3,17 +3,27 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {1}{VisionII}{3}{VisionII}{0}}
+\headcommand {\sectionentry {1}{what we do}{3}{what we do}{0}}
 \headcommand {\beamer@sectionpages {1}{2}}
 \headcommand {\beamer@subsectionpages {1}{2}}
-\headcommand {\slideentry {1}{0}{3}{3/3}{}{0}}
-\headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {1}{0}{4}{4/4}{}{0}}
-\headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {1}{0}{5}{5/8}{}{0}}
-\headcommand {\beamer@framepages {5}{8}}
-\headcommand {\beamer@partpages {1}{8}}
-\headcommand {\beamer@subsectionpages {3}{8}}
-\headcommand {\beamer@sectionpages {3}{8}}
-\headcommand {\beamer@documentpages {8}}
-\headcommand {\def \inserttotalframenumber {5}}
+\headcommand {\slideentry {1}{0}{3}{3/5}{}{0}}
+\headcommand {\beamer@framepages {3}{5}}
+\headcommand {\sectionentry {2}{applied to PMR}{6}{applied to PMR}{0}}
+\headcommand {\beamer@sectionpages {3}{5}}
+\headcommand {\beamer@subsectionpages {3}{5}}
+\headcommand {\slideentry {2}{0}{4}{6/16}{}{0}}
+\headcommand {\beamer@framepages {6}{16}}
+\headcommand {\sectionentry {3}{um primer}{17}{um primer}{0}}
+\headcommand {\beamer@sectionpages {6}{16}}
+\headcommand {\beamer@subsectionpages {6}{16}}
+\headcommand {\slideentry {3}{0}{5}{17/19}{}{0}}
+\headcommand {\beamer@framepages {17}{19}}
+\headcommand {\slideentry {3}{0}{6}{20/20}{}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {3}{0}{7}{21/24}{}{0}}
+\headcommand {\beamer@framepages {21}{24}}
+\headcommand {\beamer@partpages {1}{24}}
+\headcommand {\beamer@subsectionpages {17}{24}}
+\headcommand {\beamer@sectionpages {17}{24}}
+\headcommand {\beamer@documentpages {24}}
+\headcommand {\def \inserttotalframenumber {7}}
