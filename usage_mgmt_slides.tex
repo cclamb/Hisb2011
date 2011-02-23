@@ -32,12 +32,12 @@
 
 %---------------------------Title frame definition------------------------------------- 
 
-\title{An Interoperable Framework for Usage Managment}
+\title{Usage Management of Personal Medical Records}
 \author [Chris]{Christopher Lamb, Pramod Jamkhedkar, and Gregory Heileman}
 \institute[University of New Mexico]{
 \inst {}Department of Electrical and Computer Engineering\\
 University of New Mexico}
-\date{October 4, 2010}
+\date{Februrary 24, 2011}
 \titlegraphic{
 \begin{figure} 
 \includegraphics[width = 7cm]{UNM}
@@ -68,9 +68,14 @@ University of New Mexico}
 \tableofcontents 
 \end{frame}
 
-\section{what we do}
 \begin{frame}
-\frametitle{what we do}
+\frametitle{Introduction}
+
+\end{frame}
+
+\section{UNM Informatics}
+\begin{frame}
+\frametitle{Areas of Study}
 \begin{itemize}
 \item \textit{UNM Informatics}: Information security, theory, and architectures this work is specific to information security 
 \pause
@@ -84,9 +89,9 @@ Some quick definitions:
 \end{itemize}
 \end{frame}
 
-\section{applied to PMR}
+\section{Personal Medical Records}
 \begin{frame}
-\frametitle{um and pmr}
+\frametitle{UM and PMRs}
 
 We believe PMRs have certain attributes that aren't addressed well by current management systems:
 \pause
@@ -114,15 +119,13 @@ This opens new business models:
 \item \textit{Custom Care}
 \pause
 \item \textit{Data Marketplace}
-\pause
 \end{itemize}
  
 \end{frame}
 
-\section{um primer}
+\section{UM Primer}
 \begin{frame}
-\frametitle{um primer - system overview}
-\pause
+\frametitle{UM Primer - UM System}
 
 Three basic things:
 \begin{figure}
@@ -134,12 +137,11 @@ Three basic things:
 \item \textit{Policy}
 \item \textit{Context}
 \end{itemize}
-\pause
 
 \end{frame}
 
 \begin{frame}
-\frametitle{um primer - ontology}
+\frametitle{UM Primer - Ontology}
 
 Ontology of domain required to pull it all together
 \begin{figure}
@@ -148,24 +150,85 @@ Ontology of domain required to pull it all together
 
 \end{frame}
 
+\section{Data Marketplace}
 \begin{frame}
-\frametitle{Assumptions}
+\frametitle{Data Marketplace - Ontology}
+\pause
+
+\begin{figure}
+\includegraphics[width = 6cm]{ontology}
+\end{figure}
+\pause
 
 \begin{itemize}
-	\item Information ecosystems will operate across highly networked,
-distributed, diverse computing environments.
+\item Use a combination of static and dynamic policy evaluation
+\begin{itemize}
+\item Static filtering of records pre-distribution is more efficient
+\end{itemize}
 \pause
-	\item Resources will move across these computing environments
-as well as different information ecosystems.
+
+\item Note relationships to previous domain ontology
+\begin{itemize}
+\item Common elements include \textbf{Record} entities and specific roles
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Data Marketplace - Roles}
+
+\begin{figure}
+\includegraphics[width = 6cm]{roles}
+\end{figure}
 \pause
-	\item Multiple information ecosystems will continue to use different
-policy languages, depending on the types of rules and
-rights models required for expressing their respective policies.
-\pause
-	\item No single policy language will be able address the policy expression
-requirements of different information ecosystems.
-Policy languages will continue to change and evolve using
-different logics to express various usage semantics.
+
+In General:
+\begin{itemize}
+\item \textit{Producers} produce data, \textit{Consumers} directly consume or redistribute data
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Data Marketplace - System Attributes}
+
+\begin{itemize}
+
+\item \textit{Editability} Certain fields of that record should be editable by the owner.  Other fields must only be editable by specific medical providers.
+
+\item \textit{Roles} Verifiable roles related to ownership of specific areas of a given record.
+
+\item \textit{Auditability} Keeps a clear record of who edited what, what those specific changes were, how they were made, and when. 
+
+\item \textit{Security} Use of modern security systems as much as possible to provide additional control over assets. 
+
+\item \textit{Accessibility} Wide accessibility geographically, access to medical information from devices with a variety of form factors.
+
+\item \textit{Performance} Core functionality must be high performance.
+
+\item \textit{Flexibility} This system and the data it manages can be used in a wide variety of contexts.
+
+\item \textit{Extensibility} It must provide programmatic interfaces.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Data Marketplace - Logical View}
+
+\begin{figure}
+\includegraphics[width = 6cm]{HisbSystemArch}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+
+\begin{itemize}
+\item PMRs need some kind of usage management
 \end{itemize}
 
 \end{frame}
