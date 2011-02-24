@@ -68,32 +68,36 @@ University of New Mexico}
 \tableofcontents 
 \end{frame}
 
-\begin{frame}
-\frametitle{Introduction}
-
-\end{frame}
-
 \section{UNM Informatics}
 \begin{frame}
 \frametitle{Areas of Study}
+
+Our group:
 \begin{itemize}
-\item \textit{UNM Informatics}: Information security, theory, and architectures this work is specific to information security 
-\pause
-\item \textit{Usage Management}: Control of how an artifact is used, covering everything \textit{after} access
+\item \textit{UNM Informatics}: Information security, theory, and architectures; this work is specific to information security 
+\item \textit{Usage Management}: Control of how an artifact is used, covering everything \textit{after} access as well as controlling access itself
 \end{itemize}
 \pause
-Some quick definitions:
+
+\textit{Motivation}: We believe people should have control over their own information.  Or past motivation for DRM work was to provide content control to content creators.  Doing so provides incentive for innovation, and improves quality of life for individuals and society as a whole over time.  We believe Usage Management provides the same benefits, and should be unobtrusive.
+\newline
+\newline
+This motivation holds in this domain as well.
+\pause
+
+Acronyms:
 \begin{itemize}
-\item \textit{PMR}: Personal medical record; in this case, this record is electronic
-\item \textit{UM}: Usage management
+\item \textit{UM}: Usage Management
+\item \textit{PMR}: Personal Medical Record (this is also electronic, in this case)
 \end{itemize}
+
 \end{frame}
 
 \section{Personal Medical Records}
 \begin{frame}
 \frametitle{UM and PMRs}
 
-We believe PMRs have certain attributes that aren't addressed well by current management systems:
+PMRs have certain attributes that aren't addressed well by current management systems:
 \pause
 \begin{itemize}
 \item \textit{Mashable}
@@ -105,7 +109,6 @@ We believe PMRs have certain attributes that aren't addressed well by current ma
 \pause
 
 Usage Management of PMRs enables these things, providing fine-grained management of \textit{information contained in PMRs}
-\newline
 \newline
 \pause
 
@@ -120,6 +123,9 @@ This opens new business models:
 \pause
 \item \textit{Data Marketplace}
 \end{itemize}
+\pause
+
+But also new \textit{risks}.
  
 \end{frame}
 
@@ -152,6 +158,21 @@ Ontology of domain required to pull it all together
 
 \section{Data Marketplace}
 \begin{frame}
+A data marketplace, in this case, is a virtual environment in which data producers are able to profit by providing their information directly to various kinds of data consumers.  
+
+\begin{figure}
+\includegraphics[width = 6cm]{roles}
+\end{figure}
+\pause
+
+In General:
+\begin{itemize}
+\item \textit{Producers} produce data, \textit{Consumers} directly consume or redistribute data.  \textit{Producers} are holders of medical information, generally individual patients. \textit{Consumers} are institutions like research laboratories or pharmaceutical companies.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Data Marketplace - Ontology}
 \pause
 
@@ -164,28 +185,14 @@ Ontology of domain required to pull it all together
 \item Use a combination of static and dynamic policy evaluation
 \begin{itemize}
 \item Static filtering of records pre-distribution is more efficient
+\item Dynamic control allows for \textit{transitive attribution}, in which a consumer is appropriately credited for supplying data for products that are separated by more than one state
 \end{itemize}
 \pause
 
 \item Note relationships to previous domain ontology
 \begin{itemize}
-\item Common elements include \textbf{Record} entities and specific roles
+\item Common elements include \textbf{Record, Role} entities
 \end{itemize}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Data Marketplace - Roles}
-
-\begin{figure}
-\includegraphics[width = 6cm]{roles}
-\end{figure}
-\pause
-
-In General:
-\begin{itemize}
-\item \textit{Producers} produce data, \textit{Consumers} directly consume or redistribute data
 \end{itemize}
 
 \end{frame}
@@ -227,8 +234,19 @@ In General:
 \begin{frame}
 \frametitle{Conclusions}
 
+New Approach
 \begin{itemize}
-\item PMRs need some kind of usage management
+\item Protecting \textit{facts} rather than \textit{records} 
+\end{itemize}
+
+New Models
+\begin{itemize}
+\item More fine-grained control creates new opportunities around data management and use
+\end{itemize}
+
+Better Service
+\begin{itemize}
+\item New models provide new services, at the cost of new risks
 \end{itemize}
 
 \end{frame}
