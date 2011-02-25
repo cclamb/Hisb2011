@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  25 FEB 2011 02:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  25 FEB 2011 02:29
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -250,7 +250,7 @@ Here is how much of TeX's memory you used:
  4984 multiletter control sequences out of 15000+200000
  36514 words of font info for 70 fonts, out of 3000000 for 9000
  717 hyphenation exceptions out of 8191
- 26i,8n,23p,1580b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,8n,23p,1584b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2009/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
 i10.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
@@ -263,7 +263,7 @@ r/local/texlive/2009/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
 xlive/2009/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/200
 9/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2009/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on usage_mgmt.pdf (8 pages, 262982 bytes).
+Output written on usage_mgmt.pdf (8 pages, 262990 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
