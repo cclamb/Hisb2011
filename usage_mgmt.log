@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  21 FEB 2011 00:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.11.7)  25 FEB 2011 02:24
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -169,6 +169,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 143.
  [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 <./images/HisbSystemArch.jpg, id=17, 558.085pt x 626.34pt>
 File: ./images/HisbSystemArch.jpg Graphic file (type jpg)
 
@@ -177,61 +180,53 @@ Overfull \hbox (1.80629pt too wide) in paragraph at lines 168--169
  [][] 
  []
 
-
-Underfull \vbox (badness 4543) has occurred while \output is active []
-
- [4 <./images/HisbSystemArch.jpg>] <./images/UMOntology.jpg, id=21, 417.56pt x 
-369.38pt>
+[4 <./images/HisbSystemArch.jpg>]
+<./images/UMOntology.jpg, id=21, 417.56pt x 368.37625pt>
 File: ./images/UMOntology.jpg Graphic file (type jpg)
 
-<use ./images/UMOntology.jpg>
-<./images/roles.jpg, id=22, 327.2225pt x 150.5625pt>
+<use ./images/UMOntology.jpg> [5 <./images/UMOntology.jpg>]
+<./images/roles.jpg, id=25, 327.2225pt x 150.5625pt>
 File: ./images/roles.jpg Graphic file (type jpg)
  <use ./images/roles.jpg>
-[5 <./images/UMOntology.jpg>]
-<./images/ontology.jpg, id=26, 483.8075pt x 313.17pt>
+[6 <./images/roles.jpg>] <./images/ontology.jpg, id=33, 483.8075pt x 313.17pt>
 File: ./images/ontology.jpg Graphic file (type jpg)
 
-<use ./images/ontology.jpg> [6 <./images/roles.jpg>]
-Underfull \vbox (badness 4254) has occurred while \output is active []
-
-
-(./usage_mgmt.bbl [7 <./images/ontology.jpg>]
-Underfull \hbox (badness 1383) in paragraph at lines 114--117
+<use ./images/ontology.jpg> (./usage_mgmt.bbl [7 <./images/ontology.jpg>]
+Underfull \hbox (badness 1383) in paragraph at lines 105--108
 []\OT1/ptm/m/n/9 R. Safavi-Naini, N. P. Shep-pard, and T. Ue-hara, ``Im-
  []
 
 
-Underfull \hbox (badness 2503) in paragraph at lines 119--122
+Underfull \hbox (badness 2503) in paragraph at lines 110--113
 []\OT1/ptm/m/n/9 O. M. Al-liance, ``En-abler re-lease def-i-ni-tion for DRM
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 \OT1/ptm/m/n/9 http://xml.coverpages.org/OMA-ERELD[]DRM-V2[]0[]0-
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 152.
+(Font)              <9> on input line 143.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 152.
+(Font)              <6> on input line 143.
 
-Underfull \hbox (badness 4913) in paragraph at lines 170--172
+Underfull \hbox (badness 4913) in paragraph at lines 161--163
 []\OT1/ptm/m/n/9 ------, ``Google Health 2018: Worst Case Sce-nar-ios,''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
 []\OT1/ptm/m/n/9 ``Pubmed Health - Niacin,''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
 \OT1/ptm/m/n/9 http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0000700,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 []\OT1/ptm/m/n/9 ``The Foun-da-tion for In-tel-li-gent Phys-i-cal Agents,''
  []
 
@@ -249,13 +244,13 @@ Before submitting the final camera ready copy, remember to:
 
 [8] (./usage_mgmt.aux) ) 
 Here is how much of TeX's memory you used:
- 1685 strings out of 493848
- 26437 string characters out of 3149207
- 85358 words of memory out of 3000000
- 4986 multiletter control sequences out of 15000+200000
+ 1683 strings out of 493848
+ 26419 string characters out of 3149207
+ 84350 words of memory out of 3000000
+ 4984 multiletter control sequences out of 15000+200000
  36514 words of font info for 70 fonts, out of 3000000 for 9000
  717 hyphenation exceptions out of 8191
- 26i,8n,23p,1437b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,8n,23p,1580b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2009/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
 i10.pfb></usr/local/texlive/2009/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
@@ -268,7 +263,7 @@ r/local/texlive/2009/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
 xlive/2009/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/200
 9/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2009/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on usage_mgmt.pdf (8 pages, 264752 bytes).
+Output written on usage_mgmt.pdf (8 pages, 262982 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

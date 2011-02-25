@@ -74,15 +74,6 @@ J.~Y. Halpern and V.~Weissman, ``A formal foundation for {XrML} licenses,'' in
   \emph{Proceedings of the 17th IEEE Computer Security Foundations Workshop},
   Asilomar, CA, June 2004, pp. 251--265.
 
-\bibitem{HaWe:08}
-------, ``A formal foundation for {XrML},'' \emph{J. ACM}, vol.~55, no.~1, pp.
-  1--42, 2008.
-
-\bibitem{PuWe:02}
-R.~Pucella and V.~Weissman, ``A logic for reasoning about digital rights,'' in
-  \emph{Proceedings of the 15th IEEE Computer Security Foundations Workshop},
-  Nova Scotia, Canada, June 2002, pp. 282--294.
-
 \bibitem{XiBjFu:08}
 J.~Xiang, D.~Bjorner, and K.~Futatsugi, ``Formal digital license language with
   {OTS/CafeOBJ} method,'' in \emph{Proceedings of the sixth ACS/IEEE
