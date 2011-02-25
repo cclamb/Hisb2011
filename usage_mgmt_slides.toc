@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {english}
+\beamer@sectionintoc {1}{UNM Informatics}{3}{0}{1}
+\beamer@sectionintoc {2}{Personal Medical Records}{6}{0}{2}
+\beamer@sectionintoc {3}{UM Primer}{17}{0}{3}
+\beamer@sectionintoc {4}{Data Marketplace}{19}{0}{4}
