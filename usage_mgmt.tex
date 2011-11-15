@@ -3,97 +3,45 @@
 
 \ifCLASSINFOpdf
   \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
   \graphicspath{{./images/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
   \DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
 \else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
   \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
   \graphicspath{{./images/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
   \DeclareGraphicsExtensions{.eps}
 \fi
 
-% correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
-
 \begin{document}
-%
-% paper title
-% can use linebreaks \\ within to get better formatting as desired
+
 \title{Usage Management of Personal Health Records}
 
-
-% author names and affiliations
-% use a multiple column layout for up to two different
-% affiliations
-\author{\IEEEauthorblockN{Christopher C. Lamb, Pramod A. Jamkhedkar, Gregory L. Heileman, Ravi K. Kadaboina}
+\author{\IEEEauthorblockN{Christopher C. Lamb, Pramod A. Jamkhedkar, Gregory L. Heileman}
 \IEEEauthorblockA{University of New Mexico\\
 Department of Electrical and Computer Engineering\\
 Albuquerque, NM 87131-0001 \\
 \{cclamb, pramod54, heileman, ravik\}@ece.unm.edu}
 }
 
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-% 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
-
-% make the title area
 \maketitle
-
 
 \begin{abstract}
 Personal health record (PHR) management is under new scrutiny as private companies move into the market and government agencies actively address perceived health care distribution inequalities and inefficiencies.  Current systems are coarse-grained and provide consumers very little actual control over their data.  Herein, we propose an alternative system for managing the use of healthcare information.  This system is finer grained, allows for data mining and repackaging, and gives users more control over their data, allowing it to be distributed to their specifications.  In this paper, we outline the characteristics of such a system in different contexts, present relevant background information and research leading to the system design, and cover specific usage scenarios supported by this system that are difficult to control using simpler access control strategies.
 \end{abstract}
 
 \begin{IEEEkeywords}
-%component; formatting; style; styling;
-usage management; personal medical records
-
+usage management; personal health records
 \end{IEEEkeywords}
 
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-New healthcare legislation has spurred previously unknown levels of public and private investment in technologies supporting more efficient healthcare delivery \cite{Emr:Web:Recovery}.   An active area of examination is personal health records (PHRs).  Current systems, such as Microsoft HealthVault and Google Health are a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Emr:EvaluationHealthInf}.
+New healthcare legislation has spurred previously unknown levels of public and private investment in technologies supporting more efficient healthcare delivery \cite{Emr:Web:Recovery}.   An active area of examination is personal health records (PHRs).  Current systems, such as Microsoft HealthVault and the late Google Health are and were a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Emr:EvaluationHealthInf}.
 
-In this paper we describe a framework that allows for an open, consumer-centric approach to health information storage and consumption centered around flexible and fine-grained usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed \cite{Emr:PyAmWaCr}.  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to healthcare providers who need specific information to support diagnoses.  Such a framework will enable combination information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of policy conflict.
+In this paper we describe a framework that allows for an open, consumer-centric approach to health information storage and consumption centered around flexible and fine-grained usage management policies.  User empowering systems in this area are needed to allow users control over the information that represents them, and would be in high demand if appropriately designed \cite{Emr:PyAmWaCr}.  We propose to address this need by bundling health information (either entire records or subsets of records) with traceable and aggregateable usage policies controlled by the users themselves.  Users would have the ability to make aspects of their records available to everyone from research institutions looking for historical information for studies, to healthcare providers who need specific information to support diagnoses.  Such a framework will enable the combination of information from groups of users and determine dynamically via policy evaluation how that new set of data can be used in a way that complies with all included user policies.  If the combined dataset cannot be used, policies can be analyzed to determine the cause of policy conflict.
 
 Herein, we describe the design of a system that supports fine-grained management of those data elements in a PHR, and we demonstrate how this can be used in two example applications.  The proposed system will allow users to specify policies over the data itself rather than the entire record in question, providing control over information dissemination.  We will demonstrate the above mentioned capabilities in two distinct usage scenarios.  The first includes two distinct parties negotiating over access to specific information contained in a health record.  If the parties reach an agreement, the information consumer is granted access to specific medical data, for an agreed-upon price.  The second demonstrates a data broker combining a set of previously acquired health record data into an aggregate set for research, if the licensure is in fact compliant between all selected data elements.  In the second usage scenario, we will discuss the constraints associated with inserting aggregate data sets derived from PHRs back into a marketplace.
 
-This kind of system, allowing users control over their data in ways fostering ease of dissemination, use and reuse, helps users receive better, more targeted care, helps providers easily access required information, and allows this kind of data to be more easily examined and mined.  We apply established system design principles, used in the development of Internet-scale networks to create a open flexible system \cite{Al:04,BlCl:01,ClWrSoBr:02}.  We standardize certain features, such as operational semantics and ontological domains, but otherwise limit the impact of the policy system on data dissemination as much as possible.
+This kind of system, allowing users control over their data in ways fostering ease of dissemination, use and reuse, helps users receive better, more targeted care, helps providers easily access required information, and allows this kind of data to be more easily examined and mined.  We apply established system design principles, used in the development of Internet-scale networks to create a open flexible system \cite{Al:04,BlCl:01,ClWrSoBr:02}.  We standardize certain features, such as operational semantics and logical data domains, but otherwise limit the impact of the policy system on data dissemination as much as possible.
 
 \subsection{Previous Work}
 Even though automated usage management of PHRs is an evolving concept, there exists a rich body of previous literature in the fields of usage management, DRM, and access control. The proposed framework leverages the results in these areas to address the specific challenges posed in usage management of PHRs. Most of the research applicable to the combination of previous artifacts into a single aggregate artifact comes from the DRM world in particular.  Generally, these expressive languages have been fundamentally based on different types of mathematical logic or formalisms with reasoning capabilities \cite{ArHu:07,BaMi:06,ChCoEtHaJoLa:03,HaWe:04,XiBjFu:08}.  This approach, while useful in closed systems, tends to not work as usefully in more open dynamic environments.  This has led to the development of translation mechanisms to address interoperability needs \cite{HeJa:05,PoPrDe:04,ScTaWo:04}.  This translation process is difficult for most policy languages, and in fact infeasible as a result \cite{KoLaMaMi:04,SaShUe:04}.  Alternative approaches have required the use of sophisticated and powerful languages that must be adopted as a universal standard \cite{OMADRM,ODRL-req,Wa:04,XrML-spec}.  This approach inherently limits innovation and flexibility \cite{HeJa:05,JaHe:04,JaHe:08,JaHeMa:06}.  Usage Management approaches eclipse standard access control methodologies for use in this type of domain, as access control is a necessary but not sufficient technology supporting this kind of asset management \cite{PaSa:04,BL:73,BL:76}.
@@ -128,8 +76,7 @@ When users have aggregated medical information at a single location, companies c
 This kind of system promises to provide more responsive care at a potentially lower cost to patients, as long as patient data is available to custom medication providers.  A usage management scheme controlling specific information with respect to pharmaceutical providers could allow those providers to create custom medications for clients  better suited to those specific users.
 
 \subsection{Data Marketplace}
-%Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
-The system we describe in the following sections incorporates a market to allow users and brokers to profit from the use of personal medical data released under mutually acceptable terms, where usage policies accompany filtered data for either dynamic or static evaluation.  Usage policies themselves are essentially unlimited in how they describe the use of a specific health record.
+The system we describe in the following sections incorporates a market to allow users and brokers to profit from the use of personal health data released under mutually acceptable terms, where usage policies accompany filtered data for either dynamic or static evaluation.  Usage policies themselves are essentially unlimited in how they describe the use of a specific health record.
 
 \section{System Architecture}
 Whatever the final technical attributes of this kind of system are, that system must at least embody certain attributes and requirements.  That architecture must furthermore facilitate usage management as a first-order attribute.
@@ -169,7 +116,7 @@ Other features like notifications on certain predefined events or predefined int
 \end{figure}
 
 \subsection{Sample System Architecture}
-Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfilling the currently known attributes and requirements.  This runtime component view contains potential packages, interfaces, and components comprising a health record usage management system.  Note that this system architecture is currently technology agnostic.  Specific packages include:
+Figure ~\ref{fig:RuntimeView} outlines a potential system architecture fulfilling the currently known attributes and requirements.  Our current system is in fact implemented against this specific system architecture, but implementations are by no means restricted to using our chosen toolset (i.e. the Ruby ecosystem) for implementation.  This runtime component view contains potential packages, interfaces, and components comprising a health record usage management system.  Note that this system architecture is currently technology agnostic.  Specific packages include:
 
 \begin{itemize}
 
@@ -195,18 +142,16 @@ Various components could be mapped to disparate technologies, even within the sa
 \end{figure}
 
 \subsection{Usage Management}
-In order to apply usage management to a health record, we must first define an ontology over the records we plan to manage.  In Figure ~\ref{fig:Ontology}, we have outlined a simple sample ontology in a static entity view for this domain.  In essence, we associate a group of \textit{facts} with a single \textit{record}, both of which are instances of managed \textit{resources}.  A \textit{resource} is associated with a \textit{role}, and that is an instance of a \textit{subject}.  Finally, all \textit{resources} and \textit{subjects} are related to a \textit{context}, which also refers to a given \textit{environment}. As shown in Figure~\ref{fig:Ontology}, the Environment, Subject, and the Role, each carries a set of parameters whose values determine the manner in which resources may be used within the system. 
+In order to apply usage management to a health record, we first define a logical data model over the records we plan to manage.  In Figure ~\ref{fig:Ontology}, we have outlined a static entity view for this domain.  In essence, we associate a group of \textit{facts} with a single \textit{record}, both of which are instances of managed \textit{resources}.  A \textit{resource} is associated with a \textit{role}, and that is an instance of a \textit{subject}.  Finally, all \textit{resources} and \textit{subjects} are related to a \textit{context}, which also refers to a given \textit{environment}. As shown in Figure~\ref{fig:Ontology}, the Environment, Subject, and the Role, each carries a set of parameters whose values determine the manner in which resources may be used within the system. 
 
 As a simple example, consider an environment with parameters, \textit{Date, Location,} and \textit{DeviceType}, and the roles that include \textit{patient}  and \textit{physician}. Given these Environment and Role parameters, it is possible to express usage rules based on constraints on these parameters. For example, a particular PHR may allow edits to a patient information to be carried out only by physicians from a certified device physically located in a hospital for a given period of time. 
 
-Whereas this is an overly simplified example of usage rules, usage management of PHRs present a unique set of the usage rules specification, interpretation, enforcement, and reasoning requirements, which are discussed below. One of the primary requirements is that users need to be able to express usage rules in a fine grained manner that accurately express their concerns regarding the  usage of PHRs. To this effect, there exist multiple multiple languages that allow expression of usage control rules on data sets~\cite{XrML-spec,PaSa:04,JaHeLa:10}.  PHRs are generally managed and used in a variety of environments that may not be known to a user \textit{a priori}, at the time of specification of the rules. Therefore, it is necessary that the usage rules can be interpreted in different types of environments, and they remain with the PHR throughout their lifecycle. Finally, PHRs are often managed in groups for the sake of research studies, and across hospitals, in such situations, it is necessary to interpret the common policies for a group of PHRs based on the usage rules associated with individual PHRs. In order in incorporate such dynamics, it is necessary that the language used for specification of usage rules is capable of handling data transformations such as mashups~\cite{JaHe:08}. 
+Whereas this is an overly simplified example of usage rules, usage management of PHRs present a unique set of the usage rules specification, interpretation, enforcement, and reasoning requirements. One of the primary requirements is that users need to be able to express usage rules in a fine grained manner that accurately express their concerns regarding the  usage of PHRs. To this effect, there exist multiple languages that allow expression of usage control rules on data sets~\cite{XrML-spec,PaSa:04,JaHeLa:10}.  PHRs are generally managed and used in a variety of environments that may not be known to a user \textit{a priori}, at the time of specification of the rules. Therefore, it is necessary that the usage rules can be interpreted in different types of environments, and they remain with the PHR throughout their lifecycle. Finally, PHRs are often managed in groups for the sake of research studies, and across hospitals, in such situations, it is necessary to interpret the common policies for a group of PHRs based on the usage rules associated with individual PHRs. In order in incorporate such dynamics, it is necessary that the language used for specification of usage rules is capable of handling data transformations such as mashups~\cite{JaHe:08}. 
  
-
 \subsection{System Architecture and Attributes}
 The system architecture described fulfills the various driving requirements and attributes.  First, we support finely managed \textit{editability} constraints via the association of \textit{facts} with \textit{roles}.  \textit{Roles}, as shown in Figure ~\ref{fig:Ontology}, are first-order system entities.  The system architecture supports \textit{auditability} via the Queueing and Audit Data components and the IQueue and IAudit interfaces.  \textit{Security} emerges from the system architecture via data partitioning and the use of standard security and trusted computing technologies.  We address \textit{accessibility} constraints via the Desktop, Mobile, and Programming application interfaces.  The system can flexibly address \textit{performance} issues within the Core component behind the ICore interface.  Judicious use of queuing enhances \textit{performance} as well.  Finally, \textit{flexibility} and \textit{extensibility} emerge from the loosely coupled componentry and publicly exposed programming interfaces.
 
 \section{Sample System - Data Marketplace}
-% Go into what the market is and why we need to use one; describe who would use it and their roles; describe when it would be used and how it could be implemented
 A data marketplace for medical data through which users can generate revenue from exposing medical information of their choosing is one possible business model we previously described.  Here, as a proof of concept of our proposed system architecture, we incentivize PHR adoption via the use of a data marketplace.  We have three primary categories of roles in mind:
 
 \begin{figure}[!t]
@@ -252,10 +197,25 @@ A data marketplace for medical data through which users can generate revenue fro
 
 Usage terms in a successful conclusion generally describe what the \textit{data consumer} can access, how they may use it and for how long, where it may be accessed, and so on.  It will also usually describe some kind of payment for use, which can be based on any arbitrary number of factors such as time, date, location, attribution, or perhaps in combination with other data.
 
-The market implemented in this system is built around JADE, an open source agent development framework based on FIPA agent specifications \cite{Emr:Web:Jade,Emr:Web:Fipa}.
+%The market implemented in this system is built around JADE, an open source agent development framework based on FIPA agent specifications \cite{Emr:Web:Jade,Emr:Web:Fipa}.
 
-\subsection{System Ontology}
-This system is built around a common ontology that needs must be understood by any system developers.  It is currently used to define relationships and entities within the system at design and run time.  The \textit{record} elements in this ontology map to the \textit{record} elements in Figure ~\ref{fig:Ontology}, maintaining the one-to-many relationship of \textit{facts} to \textit{records}.  The primary elements in this ontology are:
+\subsection{Implementtion}
+We have implemented this system and this specific case in the Ruby ecosystem.  The testcase itself is implemented in Cucumber, a case-oriented testing framework \cite{Emr:Web:Cucumber}.  The system itself has specific mappings from defined system components to technical implementations:
+
+\begin{itemize}
+\item \textit{Desktop, Mobile, Programming Interfaces} These interfaces are defined and implemented in the JavaScript Object Notation (JSON) using Representative State Transfer (REST) over HTTP as the communication protocol \cite{Emr:Web:JSON,Emr:Web:REST}.
+\item \textit{External Use::Application Component} The application platform currently used is Ruby on Rails, though we are currently investigating migrating to Sinatra \cite{Emr:Web:RoR,Emr:Web:Sinatra}.
+\item \textit{Development Use::Test Component} The test component has tests implemented in both Cucumber and RSpec \cite{Emr:Web:RSpec}.
+\item \textit{Development Use::CLI Component} We use the Interactive Ruby Shell (IRB) for command line access if needed.
+\item \textit{System::Core Component} Core components are hosted within our application server and distributed via the Ruby Gem standard \cite{Emr:Web:Gem}.
+\item \textit{Communications::Queue Component} This is currently a ruby object.
+\item \textit{Data Components} All data components are implemented in SQLite \cite{Emr:Web:SQLite}.
+\end{itemize}
+
+Other interfaces are use standard ruby semantics for access.  Databases in the Data package are in fact partitioned as shown in the system architecture model.
+
+\subsection{System Data Model}
+This system is built around a common data model that needs must be understood by any system developers.  It is currently used to define relationships and entities within the system at design and run time.  The \textit{record} elements in this ontology map to the \textit{record} elements in Figure ~\ref{fig:Ontology}, maintaining the one-to-many relationship of \textit{facts} to \textit{records}.  The primary elements in this ontology are:
 
 \begin{itemize}
 
@@ -278,72 +238,27 @@ This system is built around a common ontology that needs must be understood by a
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{ontology}
-\caption{System Ontology}
+\caption{Refined System Entity Model}
 \label{System Ontology}
 \end{figure}
 
 \subsection{Dynamic and Static Policy Evaluation}
 Usage policies can be evaluated over a spectrum bordered by two distinct approaches - either dynamically, at request time, or statically, when a bundle is created.  Pure dynamic policy evaluation evaluates the entire policy against an artifact at \textit{request time}, specifically and only when a request for an action is made by a consumer.  Static evaluation only occurs when \textit{the bundle is created} and is not evaluated at any later time.  While dynamic policies are more powerful, static policies are generally simpler to define, create, and apply.  Dynamic policy evaluation requires significant runtime infrastructure as well, which static evaluation will never require.  Furthermore, that runtime infrastructure must be present in a variety of systems, implemented upon a myriad of platforms in a slew of different programming languages.  Still, we have compelling reasons for developing dynamic evaluation systems.  Static systems cannot evaluate dynamic properties well.  Attributes like time are impossible to adjudicate with the simplest of static licenses and require some kind of dynamic evaluation.  Likewise, evaluation of a bundle's context is equally impossible to do with simple static policies.  Dynamic policies are more suitable for content that producers are interested in providing for unexpected use, while static policies generally only support predefined use scenarios.
 
-In this system, we propose to use a combination of static and dynamic approaches.  Static policy evaluation occurs immediately after negotiation between the producer and consumer, when a filter is applied to the health record.  This simplifies dynamic policy requirements by limiting the data that needs to be evaluated after the bundle is released.  If this filter were not applied, the dynamic policy would need to additional clauses to support hiding only those data elements to which the consumer has not been granted access.  All other evaluation occurs after the bundle is delivered to the consumer.  In order to support more complex and unexpected usage scenarios, including evaluating usage based on time constraints, this framework provides extensive dynamic evaluation capabilities after the initial filtering phase.  We also need to be able to support seamless operation over protected artifacts while disconnected from any kind of network or communication medium.  These factors lead to a powerful and local dynamic policy evaluation system.
+In this system, we use a combination of static and dynamic approaches.  Static policy evaluation occurs immediately after negotiation between the producer and consumer, when a filter is applied to the health record.  This simplifies dynamic policy requirements by limiting the data that needs to be evaluated after the bundle is released.  If this filter were not applied, the dynamic policy would need to additional clauses to support hiding only those data elements to which the consumer has not been granted access.  All other evaluation occurs after the bundle is delivered to the consumer.  In order to support more complex and unexpected usage scenarios, including evaluating usage based on time constraints, this framework provides extensive dynamic evaluation capabilities after the initial filtering phase.  We also need to be able to support seamless operation over protected artifacts while disconnected from any kind of network or communication medium.  These factors lead to a powerful and local dynamic policy evaluation system.
 
 \section{Conclusion}
 New levels of heretofore unknown government interest in health care delivery will undoubtedly lead to increased use of personal health records \cite{Emr:Web:Recovery}.  Though current starts in this area are somewhat closed, limited, and suffer from a lack of user focus, organizations will develop new systems to deal with this extensive and valuable data.
 
-In this paper, we have outlined access and editing concerns associated with personal health records as well as various new business models that proper usage management of personal health data can create.  These new models included remote monitoring, through which users have access to their medical information from remote locations over a variety of devices (including cellular telephones and the like).  We also described in some detail how both health care consumers and providers can benefit from long-term health monitoring, and finally covered how a PHR storage system incorporating usage management enables more targeted and precise medical care.  Without appropriate usage safeguards, these models would not be tenable.  We also covered in some detail the system architecture of a usage management system for health records.
+In this paper, we have outlined access and editing concerns associated with personal health records as well as various new business models that proper usage management of personal health data can create.  These new models included remote monitoring, through which users have access to their medical information from remote locations over a variety of devices (including cellular telephones and the like).  We also described in some detail how both health care consumers and providers can benefit from long-term health monitoring, and finally covered how a PHR storage system incorporating usage management enables more targeted and precise medical care.  Without appropriate usage safeguards, these models would not be tenable.  We also covered in some detail the system architecture of a usage management system for health records and also described our current proof-of-concept implementation and the specific technologies used.
 
-The system we have developed begins to address our outlined scenarios.  Here, we presented design elements of a specific implementation of our system, a data marketplace.  Our marketplace had specific roles associated with data provision and consumption, and incorporates automated agent-based negotiation over data access.
+The system we have developed begins to address our outlined scenarios.  Here, we presented design elements of a specific implementation of our system, a data marketplace.  Our marketplace had specific roles associated with data provision and consumption, and incorporates agent-based negotiation over data access.
 
 Future areas of study in this domain include extension of our current system to other outlined scenarios.
-% conference papers do not normally have an appendix
 
-
-% use section* for acknowledgement
-%\section*{Acknowledgment}
-%The authors would like to thank Sandia National Laboratories for supporting our work.
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-%\begin{thebibliography}{1}
-%\bibliographystyle{plain}
 \bibliographystyle{IEEEtran}
 \bibliography{emr,drm}
 
-%\bibitem{IEEEhowto:kopka}
-%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-  
-%\bibitem{Jamkhedkar:Heileman}
-%P.A.~Jamkhedkar and G.~L. Heileman, \emph{An Interoperable Usage Management Framework},
-%  ACM DRM 2010, Chicago Ill, USA, 2010.
-
-%\end{thebibliography}
-
-
-
-
-% that's all folks
 \end{document}
 
 
