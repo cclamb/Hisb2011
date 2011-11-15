@@ -1,29 +1,39 @@
-% author names and affiliations
-% use a multiple column layout for up to two different
-% affiliations
-\author{\IEEEauthorblockN{Christopher C. Lamb}
-\IEEEauthorblockA{University of New Mexico\\
-Dept. of Electrical and Computer Engineering\\
-Albuquerque, NM 87131-0001 \\
-cclamb@ece.unm.edu}
-\\
-\IEEEauthorblockN{Pramod Jamkhedkar}
-\IEEEauthorblockA{University of New Mexico\\
-Dept. of Electrical and Computer Engineering\\
-Albuquerque, NM 87131-0001 \\
-pramod54@ece.unm.edu}
-\and
-\IEEEauthorblockN{Dr. Greg Heileman}
-\IEEEauthorblockA{University of New Mexico\\
-Dept. of Electrical and Computer Engineering\\
-Albuquerque, NM 87131-0001 \\
-hieleman@ece.unm.edu}
-\\
-\IEEEauthorblockN{Dr. Greg Heileman}
-\IEEEauthorblockA{University of New Mexico\\
-Dept. of Electrical and Computer Engineering\\
-Albuquerque, NM 87131-0001 \\
-ravik@ece.unm.edu}
+LaTeX Warning: Citation `ctrl:amazon-sla' on page 4 undefined on input line 2.
+LaTeX Warning: Citation `ctrl:rackspace-sla' on page 4 undefined on input line
+2.
+LaTeX Warning: Citation `ctrl:google-arch' on page 4 undefined on input line 5.
+LaTeX Warning: Citation `ctrl:amazon-best-practice' on page 4 undefined on inpu
+t line 5.
+LaTeX Warning: Citation `ctrl:amazon-fault-tolerant' on page 4 undefined on inp
+ut line 5.
+[4]
+LaTeX Warning: Citation `ctrl:amazon-cloud-watch' on page 5 undefined on input
+line 7.
+LaTeX Warning: Citation `ctrl:amazon-auto-scale' on page 5 undefined on input l
+ine 7.
+
+LaTeX Warning: Citation `comptheory:sipser:intro-comp-theory' on page 9 undefin
+ed on input line 56.
+
+@book{comptheory:sipser:intro-comp-theory,
+ author = {Sipser, Michael},
+ title = {Introduction to the Theory of Computation},
+ year = {1996},
+ isbn = {053494728X},
+ edition = {1st},
+ publisher = {International Thomson Publishing},
 }
 
+LaTeX Warning: Citation `comptheory:papadimitriou:computational-complexity' on
+page 9 undefined on input line 56.
 
+@book{comptheory:papadimitriou:computational-complexity
+,title={{Computational complexity}}
+,booktitle={{Computational complexity}}
+,author={Christos M. Papadimitriou}
+,ISBN={0201530821}
+,MR={95f:68082}
+,publisher={Addison-Wesley}
+,address={Reading, Massachusetts}
+,year={1994}
+}
