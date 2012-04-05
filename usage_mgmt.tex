@@ -1,3 +1,8 @@
+\newcommand{\CLASSINPUTtoptextmargin}{1in}
+\newcommand{\CLASSINPUTbottomtextmargin}{1in}
+\newcommand{\CLASSINPUTinnersidemargin}{1in}
+\newcommand{\CLASSINPUToutersidemargin}{1in}
+
 \documentclass[10pt, conference, compsocconf]{IEEEtran}
 
 \ifCLASSINFOpdf
@@ -27,17 +32,18 @@ Princeton, New Jersey 08544 \\
 pjamkhed@princeton.edu}
 }
 
+
+
 \maketitle
 
 \begin{abstract}
 Personal health record (PHR) management is under new scrutiny as private companies move into the market and government agencies actively address perceived health care distribution inequalities and inefficiencies.  Current systems are coarse-grained and provide consumers very little actual control over their data.  Herein, we propose an alternative system for managing the use of healthcare information.  This novel system is finer grained, allows for data mining and repackaging, and gives users more control over their data, allowing it to be distributed to their specifications.  In this paper, we outline the characteristics of such a system in different contexts, present relevant background information and research leading to the system design, and cover specific usage scenarios supported by this system that are difficult to control using simpler access control strategies.
 \end{abstract}
 
-\begin{IEEEkeywords}
-usage management; personal health records
-\end{IEEEkeywords}
-
-\IEEEpeerreviewmaketitle
+%\begin{IEEEkeywords}
+%usage management; personal health records
+%\end{IEEEkeywords}
+%\IEEEpeerreviewmaketitle
 
 \section{Introduction}
 New healthcare legislation has spurred previously unknown levels of public and private investment in technologies supporting more efficient healthcare delivery \cite{Emr:Web:Recovery}.   An active area of examination is personal health records (PHRs).  Current systems, such as Microsoft HealthVault and the late Google Health are and were a start in this area, but provide rudimentary control over health information, provide consumers with very little actual control of their information, and essentially demand proprietary lockin to these products because of the amount of effort involved with data transfer \cite{Emr:EvaluationHealthInf}.
@@ -263,7 +269,7 @@ The system we have developed begins to address our outlined scenarios.  Here, we
 
 Future areas of study in this domain include extension of our current system to other outlined scenarios.
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{abbrv}
 \bibliography{emr,drm}
 
 \end{document}
